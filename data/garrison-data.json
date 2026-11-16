@@ -1,0 +1,4127 @@
+{
+  "season": "规程·序列Ⅰ",
+  "seasonStart": "2026-11-08",
+  "updated": "2026-11-17",
+  "timezone": "Asia/Shanghai",
+  "sourcesPrimary": [
+    {
+      "title": "PRTS 盟约记录",
+      "url": "https://prts.wiki/w/卫戍协议·规程/PRTS盟约记录",
+      "date": "2026-11-17",
+      "note": "数值与干员名单唯一口径，核验日为 Asia/Shanghai"
+    },
+    {
+      "title": "可露希尔 Wiki 规程页",
+      "url": "https://closure.wiki/zh-cn/stronghold-protocol/3",
+      "date": "2026-11-17",
+      "note": "对照用；与 PRTS 冲突时以 PRTS 为准。本次核心/附加效果对照未见冲突。"
+    }
+  ],
+  "countingRules": {
+    "ownedVsOnField": "页面勾选「已拿到的干员」只用于估算能否激活；凡效果写明「在场 N 名不同干员」的强化（含全部核心 6 人强化，以及精准/坚守/助力/不屈/聚合/奥术等），必须按战场上的不同干员计算，不能把整备区或仅已拥有算进强化。",
+    "harmony": "调和激活人数为 1。激活后，场上核心盟约的激活人数 +1，调和干员享受已激活的核心盟约。因此勾选魔王后，再有 2 名乌萨斯就应显示乌萨斯已激活。这不等于已经满足 6 人在场强化。",
+    "arts": "奥术：2 人激活（附加法术伤害），3 名不同奥术在场才强化（减抗 + 攻击范围内隐匿效果失效）。社区乌萨斯成型常写 2 奥术，不会触发 3 人强化。",
+    "benchActivation": "远见、奇迹、投资人：整备区的该盟约干员也可用于激活。",
+    "solo": "独行仅在场上恰好 1 名时生效，2 名及以上失效。",
+    "ultimate": "绝技按场上精锐状态的干员人数计算：在场 2 名精锐激活（攻击力 +30%），在场 5 名精锐强化（技力消耗 -30%）。不要按「绝技」盟约所属人数计算，也没有专属干员池。所有干员的精锐状态均可激活该盟约。",
+    "crossCore": "跨核心干员按其所带的全部核心盟约计入对应池与人数，不要只按「第一盟约」登记。例如锏同时计入卡西米尔、谢拉格、莱塔尼亚；薇薇安娜同时计入卡西米尔、莱塔尼亚；烛煌同时计入炎、维多利亚；哈洛德同时计入维多利亚、谢拉格；卡涅利安同时计入萨尔贡、莱塔尼亚；复奏同时计入叙拉古、莱塔尼亚。"
+  },
+  "covenants": [
+    {
+      "id": "yan",
+      "name": "炎",
+      "type": "core",
+      "activateCount": 3,
+      "enhanceCount": 6,
+      "enhanceRequireOnField": true,
+      "effects": [
+        {
+          "stage": "activate",
+          "text": "【炎】干员攻击力+(23+0.9×层数)%"
+        },
+        {
+          "stage": "enhance",
+          "text": "战斗开始时，【炎】干员每次攻击时造成攻击力6%的随机元素损伤；全场敌人元素损伤恢复速度增加(40+0.3×层数)%",
+          "condition": "在场6名不同的【炎】干员",
+          "requireOnField": true
+        }
+      ],
+      "notes": "6 人强化必须在场不同干员。数值口径：PRTS 盟约记录（2026-11-17 核验）。"
+    },
+    {
+      "id": "sargon",
+      "name": "萨尔贡",
+      "type": "core",
+      "activateCount": 3,
+      "enhanceCount": 6,
+      "enhanceRequireOnField": true,
+      "effects": [
+        {
+          "stage": "activate",
+          "text": "【萨尔贡】干员开启技能时，所有【萨尔贡】干员攻击速度+12（至多+300），持续(5+0.22×层数)秒"
+        },
+        {
+          "stage": "enhance",
+          "text": "【萨尔贡】干员每次开启技能时，在攻击范围内制造一个流沙地面。位于流沙地面上的敌人受到(20+0.025×层数)%的迟钝效果，每5秒造成一次(5000+25×层数)点法术伤害并束缚1秒；【萨尔贡】干员技能持续期间，攻击范围内的流沙地面使敌人的迟钝效果变为2倍，每秒受到(800+4×层数)点法术伤害",
+          "condition": "在场6名不同的【萨尔贡】干员",
+          "requireOnField": true
+        }
+      ],
+      "notes": "6 人强化必须在场不同干员。数值口径：PRTS 盟约记录。"
+    },
+    {
+      "id": "victoria",
+      "name": "维多利亚",
+      "type": "core",
+      "activateCount": 3,
+      "enhanceCount": 6,
+      "enhanceRequireOnField": true,
+      "effects": [
+        {
+          "stage": "activate",
+          "text": "携带装备的【维多利亚】干员伤害提升至(125+0.8×层数)%"
+        },
+        {
+          "stage": "threshold",
+          "text": "获得一件带有随机特殊效果的维式重锤",
+          "condition": "每叠加25层"
+        },
+        {
+          "stage": "enhance",
+          "text": "【维多利亚】干员每携带1件装备攻击力+40%，携带进阶装备改为+80%",
+          "condition": "在场6名不同【维多利亚】干员",
+          "requireOnField": true
+        }
+      ],
+      "notes": "激活效果只对携带装备的维多利亚干员生效。6 人强化必须在场。本期（规程·序列Ⅰ）社区明确：死芒、焰影苇草不属于维多利亚，不要用上赛季名单。"
+    },
+    {
+      "id": "kjerag",
+      "name": "谢拉格",
+      "type": "core",
+      "activateCount": 3,
+      "enhanceCount": 6,
+      "enhanceRequireOnField": true,
+      "effects": [
+        {
+          "stage": "activate",
+          "text": "【谢拉格】干员伤害提升至125%，对寒冷和冻结敌人额外提升至(135+1×层数)%"
+        },
+        {
+          "stage": "threshold",
+          "text": "获得一件谢拉格不融冰",
+          "condition": "每叠加100层"
+        },
+        {
+          "stage": "enhance",
+          "text": "战斗开始时召唤可自主行动的雪山巨人，其攻击力和生命值随谢拉格层数提升而提升。雪山巨人将在巨人和雪山形态转换，雪山形态可以阻挡敌人并造成溅射伤害，雪山形态攻击被冻结的敌人时造成高额法术伤害并解除目标的冻结状态；巨人形态可以移动并对敌人造成远程溅射伤害",
+          "condition": "在场6名不同的【谢拉格】干员",
+          "requireOnField": true
+        }
+      ],
+      "notes": "6 人强化必须在场不同干员。数值口径：PRTS 盟约记录。"
+    },
+    {
+      "id": "aegir",
+      "name": "阿戈尔",
+      "type": "core",
+      "activateCount": 3,
+      "enhanceCount": 6,
+      "enhanceRequireOnField": true,
+      "effects": [
+        {
+          "stage": "activate",
+          "text": "【阿戈尔】干员生命值+(35+1×层数)%。战斗开始时【阿戈尔】干员依次吞噬身前一格干员造成5000点物理伤害并获得其基础攻击力和阻挡数，并叠加等于被吞噬者等阶的盟约层数（【阿戈尔】之间优先对更靠左和靠上的干员发起吞噬）"
+        },
+        {
+          "stage": "enhance",
+          "text": "前3名【阿戈尔】干员首次被击倒时立刻复活",
+          "condition": "在场6名不同【阿戈尔】干员",
+          "requireOnField": true
+        }
+      ],
+      "notes": "本期 6 人强化（不是上赛季的 5 人）。吞噬与站位有关，属官方规则，不是社区配方。"
+    },
+    {
+      "id": "siracusa",
+      "name": "叙拉古",
+      "type": "core",
+      "activateCount": 3,
+      "enhanceCount": 6,
+      "enhanceRequireOnField": true,
+      "effects": [
+        {
+          "stage": "activate",
+          "text": "【叙拉古】干员部署后攻击速度+(25+0.8×层数)，持续(32+0.4×层数)秒"
+        },
+        {
+          "stage": "enhance",
+          "text": "每次攻击时有30%概率为敌人随机附加一个异常状态，持续(1+0.0018×层数)秒；敌人存在2种或以上异常状态时，每秒对自身及周围一定范围内的敌人造成(800+10×层数)点真实伤害",
+          "condition": "在场6名不同的【叙拉古】干员",
+          "requireOnField": true
+        }
+      ],
+      "notes": "6 人强化必须在场不同干员。数值口径：PRTS 盟约记录。"
+    },
+    {
+      "id": "kazimierz",
+      "name": "卡西米尔",
+      "type": "core",
+      "activateCount": 3,
+      "enhanceCount": 6,
+      "enhanceRequireOnField": true,
+      "effects": [
+        {
+          "stage": "activate",
+          "text": "每次有干员部署时【卡西米尔】干员攻击力+20%（至多+(50+1×层数)%），持续至战斗结束"
+        },
+        {
+          "stage": "enhance",
+          "text": "【卡西米尔】地面干员被击倒时离场并召唤整备区最右侧【卡西米尔】干员加入战斗（不改变当前盟约的激活状态）；【卡西米尔】干员开启技能或部署后30秒内攻击时附带攻击力65%的真实伤害",
+          "condition": "在场6名不同的【卡西米尔】干员",
+          "requireOnField": true
+        }
+      ],
+      "notes": "强化召唤整备区干员「不改变当前盟约的激活状态」。6 人强化必须在场。"
+    },
+    {
+      "id": "ursus",
+      "name": "乌萨斯",
+      "type": "core",
+      "activateCount": 3,
+      "enhanceCount": 6,
+      "enhanceRequireOnField": true,
+      "effects": [
+        {
+          "stage": "activate",
+          "text": "【乌萨斯】干员攻击力+(35+0.75×层数)%，生命值+(10+0.3×层数)%，【乌萨斯】干员击倒其他单位时为【乌萨斯】叠加2层临时层数"
+        },
+        {
+          "stage": "enhance",
+          "text": "【乌萨斯】干员受到伤害的(15+0.05×层数)%转化为10秒的生命流失，当伤害来源被击倒时不再流失生命；阻挡敌人期间，敌人每秒受到相当于攻击力(50+0.25×层数)%的法术伤害；【乌萨斯】干员击倒其他单位时叠加的临时层数提升至4层",
+          "condition": "在场6名不同的【乌萨斯】干员",
+          "requireOnField": true
+        }
+      ],
+      "notes": "临时层数在进入下个休整期时销毁，除非被特质转化为固定层数。6 人强化必须在场；勾选已拥有只用于估算激活。调和（如魔王）可使激活人数+1，因此 2 名乌萨斯+魔王应显示核心已激活，但不等同于已达成 6 人在场强化。"
+    },
+    {
+      "id": "iberia",
+      "name": "伊比利亚",
+      "type": "core",
+      "activateCount": 3,
+      "enhanceCount": 6,
+      "enhanceRequireOnField": true,
+      "effects": [
+        {
+          "stage": "activate",
+          "text": "【伊比利亚】干员或炼金单元每次造成伤害时，使目标每秒受到(11+0.06×层数)%攻击力（至多叠加10次）的持续法术伤害，持续10秒"
+        },
+        {
+          "stage": "enhance",
+          "text": "【伊比利亚】干员或炼金单元造成伤害时附带的持续法术伤害提升至2倍，并使目标移动速度-4%（至多-80%），持续10秒；【伊比利亚】干员或炼金单元每次造成伤害时有20%概率弹射到周围一定范围内的敌人造成300%攻击力的法术伤害",
+          "condition": "在场6名不同的【伊比利亚】干员",
+          "requireOnField": true
+        }
+      ],
+      "notes": "6 人强化必须在场不同干员。数值口径：PRTS 盟约记录。"
+    },
+    {
+      "id": "leithanien",
+      "name": "莱塔尼亚",
+      "type": "core",
+      "activateCount": 3,
+      "enhanceCount": 6,
+      "enhanceRequireOnField": true,
+      "effects": [
+        {
+          "stage": "activate",
+          "text": "【莱塔尼亚】干员和召唤物攻击力+(30+1×层数)%，场上敌人被击倒时在附近召唤“一个小节”（场上最多存在10个）"
+        },
+        {
+          "stage": "enhance",
+          "text": "召唤“一个小节”时(30+0.1×层数)%概率改为召唤“一个乐部”，在场时使【莱塔尼亚】干员攻速+20；场上【莱塔尼亚】召唤物上限提升至20；场上我方干员被击倒时会额外召唤“一个小节”",
+          "condition": "在场6名不同的【莱塔尼亚】干员",
+          "requireOnField": true
+        }
+      ],
+      "notes": "6 人强化必须在场不同干员。数值口径：PRTS 盟约记录。"
+    },
+    {
+      "id": "precision",
+      "name": "精准",
+      "type": "additional",
+      "activateCount": 2,
+      "enhanceCount": 3,
+      "enhanceRequireOnField": true,
+      "effects": [
+        {
+          "stage": "activate",
+          "text": "【精准】干员攻击力+(10+1.2×层数)%"
+        },
+        {
+          "stage": "enhance",
+          "text": "生效范围变为【精准】干员和所有远程干员，且攻击无视30%防御力和法术抗性",
+          "condition": "在场3名不同【精准】干员",
+          "requireOnField": true
+        }
+      ]
+    },
+    {
+      "id": "swift",
+      "name": "迅捷",
+      "type": "additional",
+      "activateCount": 2,
+      "enhanceCount": null,
+      "layerThreshold": 40,
+      "effects": [
+        {
+          "stage": "activate",
+          "text": "【迅捷】干员技能结束时有(20+0.35×层数)%概率立刻回复12点技力"
+        },
+        {
+          "stage": "threshold",
+          "text": "所有干员技能结束时有等概率额外回复15点技力",
+          "condition": "达到40层"
+        }
+      ]
+    },
+    {
+      "id": "nimble",
+      "name": "灵巧",
+      "type": "additional",
+      "activateCount": 2,
+      "enhanceCount": null,
+      "layerThreshold": 40,
+      "effects": [
+        {
+          "stage": "activate",
+          "text": "【灵巧】干员及周围4格的干员攻击速度+(10+1×层数)"
+        },
+        {
+          "stage": "threshold",
+          "text": "生效范围变为【灵巧】干员周围8格",
+          "condition": "达到40层"
+        }
+      ]
+    },
+    {
+      "id": "steadfast",
+      "name": "坚守",
+      "type": "additional",
+      "activateCount": 2,
+      "enhanceCount": 3,
+      "enhanceRequireOnField": true,
+      "effects": [
+        {
+          "stage": "activate",
+          "text": "所有干员生命值+(25+1.2×层数)%"
+        },
+        {
+          "stage": "enhance",
+          "text": "场上非【坚守】干员受到伤害时，所受伤害的40%由【坚守】干员平均承担；【坚守】干员受到伤害时，伤害来源受到(850+10×层数)点法术伤害（每0.2秒至多触发1次）和持续5秒的40%的脆弱效果",
+          "condition": "在场3名不同【坚守】干员",
+          "requireOnField": true
+        }
+      ]
+    },
+    {
+      "id": "support",
+      "name": "助力",
+      "type": "additional",
+      "activateCount": 2,
+      "enhanceCount": 3,
+      "enhanceRequireOnField": true,
+      "effects": [
+        {
+          "stage": "activate",
+          "text": "所有干员防御力+(15+1.2×层数)%，再部署时间-30%。休整期结束时，使当前所有已激活的盟约层数+2"
+        },
+        {
+          "stage": "enhance",
+          "text": "休整期结束时的层数加成改为+4",
+          "condition": "在场3名不同【助力】干员",
+          "requireOnField": true
+        }
+      ]
+    },
+    {
+      "id": "foresight",
+      "name": "远见",
+      "type": "additional",
+      "activateCount": 2,
+      "enhanceCount": null,
+      "benchCountsForActivation": true,
+      "effects": [
+        {
+          "stage": "activate",
+          "text": "<每叠加10层>获得一次2资金。<首次到达80层>所有【远见】干员购买价格永久-1资金。<首次到达150层>所有【远见】干员购买价格额外永久-1资金。整备区的【远见】干员也可用于激活盟约"
+        }
+      ],
+      "notes": "激活可计入整备区干员。"
+    },
+    {
+      "id": "miracle",
+      "name": "奇迹",
+      "type": "additional",
+      "activateCount": 2,
+      "enhanceCount": null,
+      "layerThreshold": 100,
+      "benchCountsForActivation": true,
+      "effects": [
+        {
+          "stage": "activate",
+          "text": "刷新调度中心时，有(18+0.25×层数)%概率使下次刷新不消耗资金。<首次到达100层>调度中心刷新时至少出现一名等同于当前调度中心等级的干员。整备区的【奇迹】干员也可用于激活盟约"
+        }
+      ],
+      "notes": "激活可计入整备区干员。叙拉古社区路线因此可以把复奏留在整备区维持奇迹。"
+    },
+    {
+      "id": "investor",
+      "name": "投资人",
+      "type": "additional",
+      "activateCount": 3,
+      "enhanceCount": null,
+      "layerThreshold": 100,
+      "benchCountsForActivation": true,
+      "effects": [
+        {
+          "stage": "activate",
+          "text": "干员的“获得时”类特质每次触发2次。整备区的【投资人】干员也可用于激活盟约"
+        },
+        {
+          "stage": "threshold",
+          "text": "“获得时”类特质每次触发3次",
+          "condition": "达到100层"
+        }
+      ],
+      "notes": "激活人数为 3，且可计入整备区。"
+    },
+    {
+      "id": "raid",
+      "name": "突袭",
+      "type": "additional",
+      "activateCount": 2,
+      "enhanceCount": null,
+      "layerThreshold": 50,
+      "effects": [
+        {
+          "stage": "activate",
+          "text": "【突袭】干员10秒内未进行攻击或技能就绪时，若范围内没有敌人，则保留技力立即再部署至一名地面敌人周围，期间攻击力和生命值+(25+1×层数)%"
+        },
+        {
+          "stage": "threshold",
+          "text": "所有干员攻击速度+50",
+          "condition": "达到50层"
+        }
+      ]
+    },
+    {
+      "id": "indomitable",
+      "name": "不屈",
+      "type": "additional",
+      "activateCount": 2,
+      "enhanceCount": 3,
+      "enhanceRequireOnField": true,
+      "effects": [
+        {
+          "stage": "activate",
+          "text": "地面干员被击倒时，有(18+0.4×层数)%概率立刻重新部署"
+        },
+        {
+          "stage": "enhance",
+          "text": "地面干员被击倒时使场上所有干员技力+5",
+          "condition": "在场3名不同【不屈】干员",
+          "requireOnField": true
+        }
+      ]
+    },
+    {
+      "id": "harmony",
+      "name": "调和",
+      "type": "additional",
+      "activateCount": 1,
+      "enhanceCount": null,
+      "effects": [
+        {
+          "stage": "activate",
+          "text": "激活时可以使场上核心盟约的激活人数+1，【调和】干员享受已激活的核心盟约的效果"
+        }
+      ],
+      "notes": "常规池调和干员：Ⅲ阶「盟约·辅助干员」、Ⅵ阶「魔王」。勾选魔王后，2 名乌萨斯即应显示乌萨斯已激活。策略「Pith / 优等生」还会提供额外调和干员，未计入常规调度池。"
+    },
+    {
+      "id": "auxiliary",
+      "name": "协防干员",
+      "type": "additional",
+      "activateCount": 2,
+      "enhanceCount": null,
+      "effects": [
+        {
+          "stage": "activate",
+          "text": "所有干员受到的物理和法术伤害-20%；【协防干员】伤害提升至120%，精锐【协防干员】造成伤害提升至140%"
+        }
+      ]
+    },
+    {
+      "id": "solo",
+      "name": "独行",
+      "type": "additional",
+      "activateCount": 1,
+      "enhanceCount": null,
+      "effects": [
+        {
+          "stage": "activate",
+          "text": "【独行】干员攻击力和生命值+60%，初始技力+15（在场2名及以上【独行】干员时失效）",
+          "condition": "在场1名【独行】干员",
+          "requireOnField": true
+        }
+      ],
+      "notes": "必须恰好在场 1 名才生效，2 名及以上失效。"
+    },
+    {
+      "id": "ultimate",
+      "name": "绝技",
+      "type": "additional",
+      "activateCount": 2,
+      "enhanceCount": 5,
+      "enhanceRequireOnField": true,
+      "countsElites": true,
+      "effects": [
+        {
+          "stage": "activate",
+          "text": "精锐状态的干员攻击力+30%",
+          "condition": "在场2名精锐状态的干员",
+          "requireOnField": true
+        },
+        {
+          "stage": "enhance",
+          "text": "精锐状态的干员技力消耗-30%",
+          "condition": "在场5名精锐状态的干员",
+          "requireOnField": true
+        }
+      ],
+      "notes": "按场上 2 / 5 名精锐状态干员计算，不要按绝技盟约人数。没有专属干员池；所有干员的精锐状态均可激活该盟约。"
+    },
+    {
+      "id": "gather",
+      "name": "聚合",
+      "type": "additional",
+      "activateCount": 2,
+      "enhanceCount": 3,
+      "enhanceRequireOnField": true,
+      "effects": [
+        {
+          "stage": "activate",
+          "text": "【聚合】干员攻击范围内的我方单位每秒回复攻击力(16+0.12×层数)%的生命值和攻击力(8+0.06×层数)%的元素损伤"
+        },
+        {
+          "stage": "enhance",
+          "text": "【聚合】干员攻击范围内的所有干员获得(15+0.08×层数)%的庇护",
+          "condition": "在场3名【聚合】干员",
+          "requireOnField": true
+        }
+      ]
+    },
+    {
+      "id": "arts",
+      "name": "奥术",
+      "type": "additional",
+      "activateCount": 2,
+      "enhanceCount": 3,
+      "enhanceRequireOnField": true,
+      "effects": [
+        {
+          "stage": "activate",
+          "text": "【奥术】干员造成伤害时额外附加一次(20+0.4×层数)%攻击力的法术伤害"
+        },
+        {
+          "stage": "enhance",
+          "text": "场上所有敌人每次受到伤害时法术抗性-1（至多(-30-0.05×层数)）；【奥术】干员攻击范围内的敌人隐匿效果失效",
+          "condition": "在场3名不同【奥术】干员",
+          "requireOnField": true
+        }
+      ],
+      "notes": "激活门槛是 2 人（附加法术伤害）。减抗与攻击范围内隐匿失效要在场 3 名不同【奥术】干员。社区常见的「2 奥术」成型板不会触发减抗和破隐。"
+    }
+  ],
+  "operators": [
+    {
+      "id": "折桠",
+      "officialName": "折桠",
+      "tier": 1,
+      "covenants": [
+        "乌萨斯",
+        "不屈"
+      ],
+      "keyTraits": "持续叠加：<进入休整期时>转化 2 层【乌萨斯】临时层数为固定层数",
+      "eliteTraits": "<进入休整期时>转化 4 层【乌萨斯】临时层数为固定层数",
+      "prtsUrl": "https://prts.wiki/w/折桠",
+      "pool": "standard",
+      "alias": [
+        "折娅"
+      ]
+    },
+    {
+      "id": "艾丝黛尔",
+      "officialName": "艾丝黛尔",
+      "tier": 1,
+      "covenants": [
+        "萨尔贡",
+        "独行"
+      ],
+      "keyTraits": "持续叠加：<战斗中>每次开启技能时使已激活的【萨尔贡】层数 +1 （每回合至多叠加2层）",
+      "eliteTraits": "<战斗中>每次开启技能时使已激活的【萨尔贡】层数 +2 （每回合至多叠加4层）",
+      "prtsUrl": "https://prts.wiki/w/艾丝黛尔",
+      "pool": "standard"
+    },
+    {
+      "id": "幽灵鲨",
+      "officialName": "幽灵鲨",
+      "tier": 1,
+      "covenants": [
+        "阿戈尔"
+      ],
+      "keyTraits": "持续叠加：<战斗中>部署时使已激活的【阿戈尔】层数 +1 （每回合至多叠加1层）",
+      "eliteTraits": "<战斗中>部署时使已激活的【阿戈尔】层数 +2 （每回合至多叠加2层）",
+      "prtsUrl": "https://prts.wiki/w/幽灵鲨",
+      "pool": "standard"
+    },
+    {
+      "id": "野鬃",
+      "officialName": "野鬃",
+      "tier": 1,
+      "covenants": [
+        "卡西米尔",
+        "助力"
+      ],
+      "keyTraits": "持续叠加：<战斗中>部署时使已激活的【卡西米尔】层数 +1 （每回合至多叠加2层）",
+      "eliteTraits": "<战斗中>部署时使已激活的【卡西米尔】层数 +2 （每回合至多叠加4层）",
+      "prtsUrl": "https://prts.wiki/w/野鬃",
+      "pool": "standard"
+    },
+    {
+      "id": "慕斯",
+      "officialName": "慕斯",
+      "tier": 1,
+      "covenants": [
+        "维多利亚"
+      ],
+      "keyTraits": "持续叠加：<休整期结束时>使已激活的【维多利亚】层数 +1",
+      "eliteTraits": "<休整期结束时>使已激活的【维多利亚】层数 +2",
+      "prtsUrl": "https://prts.wiki/w/慕斯",
+      "pool": "standard"
+    },
+    {
+      "id": "角峰",
+      "officialName": "角峰",
+      "tier": 1,
+      "covenants": [
+        "谢拉格",
+        "坚守"
+      ],
+      "keyTraits": "作战能力：<战斗中>对每名敌人首次造成伤害时使目标陷入 2秒 寒冷",
+      "eliteTraits": "<战斗中>对每名敌人首次造成伤害时使目标陷入 4秒 寒冷",
+      "prtsUrl": "https://prts.wiki/w/角峰",
+      "pool": "standard"
+    },
+    {
+      "id": "灰喉",
+      "officialName": "灰喉",
+      "tier": 1,
+      "covenants": [
+        "精准"
+      ],
+      "keyTraits": "单次叠加：<获得时>【精准】层数 +2",
+      "eliteTraits": "<获得时>【精准】层数 +4",
+      "prtsUrl": "https://prts.wiki/w/灰喉",
+      "pool": "standard"
+    },
+    {
+      "id": "深靛",
+      "officialName": "深靛",
+      "tier": 1,
+      "covenants": [
+        "伊比利亚"
+      ],
+      "keyTraits": "持续叠加：<休整期结束时>使已激活的【伊比利亚】层数+2",
+      "eliteTraits": "<休整期结束时>使已激活的【伊比利亚】层数+4",
+      "prtsUrl": "https://prts.wiki/w/深靛",
+      "pool": "standard"
+    },
+    {
+      "id": "卡达",
+      "officialName": "卡达",
+      "tier": 1,
+      "covenants": [
+        "奥术"
+      ],
+      "keyTraits": "持续叠加：<休整期结束时>使已激活的【奥术】层数 +1",
+      "eliteTraits": "<休整期结束时>使已激活的【奥术】层数 +2",
+      "prtsUrl": "https://prts.wiki/w/卡达",
+      "pool": "standard"
+    },
+    {
+      "id": "摆渡人",
+      "officialName": "摆渡人",
+      "tier": 1,
+      "covenants": [
+        "坚守",
+        "不屈"
+      ],
+      "keyTraits": "单次叠加：<获得时>【坚守】【不屈】层数 +1",
+      "eliteTraits": "<获得时>【坚守】【不屈】层数 +2",
+      "prtsUrl": "https://prts.wiki/w/摆渡人",
+      "pool": "standard"
+    },
+    {
+      "id": "夏栎",
+      "officialName": "夏栎",
+      "tier": 1,
+      "covenants": [
+        "助力"
+      ],
+      "keyTraits": "持续叠加：<休整期结束时>使当前已激活且层数最多的盟约层数 +1 （此干员在整备区也生效）",
+      "eliteTraits": "<休整期结束时>使当前已激活且层数最多的盟约层数 +2 （此干员在整备区也生效）",
+      "prtsUrl": "https://prts.wiki/w/夏栎",
+      "pool": "standard"
+    },
+    {
+      "id": "杰克",
+      "officialName": "杰克",
+      "tier": 1,
+      "covenants": [
+        "突袭"
+      ],
+      "keyTraits": "作战能力：<战斗中>造成的伤害变为弱点伤害（根据敌人的防御力与法术抗性变换伤害类型）",
+      "eliteTraits": null,
+      "prtsUrl": "https://prts.wiki/w/杰克",
+      "pool": "standard"
+    },
+    {
+      "id": "霜叶",
+      "officialName": "霜叶",
+      "tier": 1,
+      "covenants": [
+        "灵巧"
+      ],
+      "keyTraits": "单次叠加：<获得时>【灵巧】层数 +2",
+      "eliteTraits": "<获得时>【灵巧】层数 +4",
+      "prtsUrl": "https://prts.wiki/w/霜叶",
+      "pool": "standard"
+    },
+    {
+      "id": "拜松",
+      "officialName": "拜松",
+      "tier": 1,
+      "covenants": [
+        "炎"
+      ],
+      "keyTraits": "单次叠加：<获得时>【炎】层数 +2",
+      "eliteTraits": "<获得时>【炎】层数 +4",
+      "prtsUrl": "https://prts.wiki/w/拜松",
+      "pool": "standard"
+    },
+    {
+      "id": "褐果",
+      "officialName": "褐果",
+      "tier": 1,
+      "covenants": [
+        "聚合"
+      ],
+      "keyTraits": "单次叠加：<获得时>【聚合】层数 +2",
+      "eliteTraits": "<获得时>【聚合】层数 +4",
+      "prtsUrl": "https://prts.wiki/w/褐果",
+      "pool": "standard"
+    },
+    {
+      "id": "烈夏",
+      "officialName": "烈夏",
+      "tier": 1,
+      "covenants": [
+        "乌萨斯"
+      ],
+      "keyTraits": "持续叠加：<战斗开始时>使已激活的【乌萨斯】临时层数 +4",
+      "eliteTraits": "<战斗开始时>使已激活的【乌萨斯】临时层数 +8",
+      "prtsUrl": "https://prts.wiki/w/烈夏",
+      "pool": "standard"
+    },
+    {
+      "id": "陨星",
+      "officialName": "陨星",
+      "tier": 1,
+      "covenants": [
+        "迅捷"
+      ],
+      "keyTraits": "持续叠加：<战斗中>每次开启技能时使已激活的【迅捷】层数 +1 （每回合至多叠加2层）",
+      "eliteTraits": "<战斗中>每次开启技能时使已激活的【迅捷】层数 +2 （每回合至多叠加4层）",
+      "prtsUrl": "https://prts.wiki/w/陨星",
+      "pool": "standard"
+    },
+    {
+      "id": "拉普兰德",
+      "officialName": "拉普兰德",
+      "tier": 1,
+      "covenants": [
+        "叙拉古"
+      ],
+      "keyTraits": "单次叠加：<获得时>【叙拉古】层数 +2",
+      "eliteTraits": "<获得时>【叙拉古】层数 +4",
+      "prtsUrl": "https://prts.wiki/w/拉普兰德",
+      "pool": "standard"
+    },
+    {
+      "id": "地灵",
+      "officialName": "地灵",
+      "tier": 1,
+      "covenants": [
+        "莱塔尼亚",
+        "独行"
+      ],
+      "keyTraits": "持续叠加：<战斗中>攻击范围内每有一名敌人被击倒使已激活的【莱塔尼亚】层数 +1 （每回合至多叠加1层）",
+      "eliteTraits": "<战斗中>攻击范围内每有一名敌人被击倒使已激活的【莱塔尼亚】层数 +2 （每回合至多叠加2层）",
+      "prtsUrl": "https://prts.wiki/w/地灵",
+      "pool": "standard"
+    },
+    {
+      "id": "折光",
+      "officialName": "折光",
+      "tier": 2,
+      "covenants": [
+        "莱塔尼亚"
+      ],
+      "keyTraits": "持续叠加：<休整期结束时>使已激活的【莱塔尼亚】层数 +4",
+      "eliteTraits": "<休整期结束时>使已激活的【莱塔尼亚】层数 +8",
+      "prtsUrl": "https://prts.wiki/w/折光",
+      "pool": "standard"
+    },
+    {
+      "id": "蓝毒",
+      "officialName": "蓝毒",
+      "tier": 2,
+      "covenants": [
+        "伊比利亚"
+      ],
+      "keyTraits": "作战能力：<战斗中>【伊比利亚】每叠加2层，本干员攻击力 +1%",
+      "eliteTraits": "<战斗中>【伊比利亚】每叠加1层，本干员攻击力 +1%",
+      "prtsUrl": "https://prts.wiki/w/蓝毒",
+      "pool": "standard"
+    },
+    {
+      "id": "泡泡",
+      "officialName": "泡泡",
+      "tier": 2,
+      "covenants": [
+        "萨尔贡",
+        "坚守"
+      ],
+      "keyTraits": "持续叠加：<战斗中>每次开启技能时使已激活的【萨尔贡】【坚守】层数 +2 （每回合至多叠加4层）",
+      "eliteTraits": "<战斗中>每次开启技能时使已激活的【萨尔贡】【坚守】层数 +4 （每回合至多叠加8层）",
+      "prtsUrl": "https://prts.wiki/w/泡泡",
+      "pool": "standard"
+    },
+    {
+      "id": "莎草",
+      "officialName": "莎草",
+      "tier": 2,
+      "covenants": [
+        "萨尔贡",
+        "聚合"
+      ],
+      "keyTraits": "作战能力：<战斗中>每次开启技能时使身前一格干员回复 2 点技力",
+      "eliteTraits": "<战斗中>每次开启技能时使身前一格干员回复 4 点技力",
+      "prtsUrl": "https://prts.wiki/w/莎草",
+      "pool": "standard"
+    },
+    {
+      "id": "雪猎",
+      "officialName": "雪猎",
+      "tier": 2,
+      "covenants": [
+        "谢拉格",
+        "精准"
+      ],
+      "keyTraits": "单次叠加：<获得时>【谢拉格】【精准】层数 +4",
+      "eliteTraits": "<获得时>【谢拉格】【精准】层数 +8",
+      "prtsUrl": "https://prts.wiki/w/雪猎",
+      "pool": "standard"
+    },
+    {
+      "id": "砾",
+      "officialName": "砾",
+      "tier": 2,
+      "covenants": [
+        "卡西米尔",
+        "不屈"
+      ],
+      "keyTraits": "持续叠加：<战斗中>部署时使已激活的【卡西米尔】【不屈】层数 +2 （每场战斗至多叠加12层）",
+      "eliteTraits": "<战斗中>部署时使已激活的【卡西米尔】【不屈】层数 +4 （每场战斗至多叠加24层）",
+      "prtsUrl": "https://prts.wiki/w/砾",
+      "pool": "standard"
+    },
+    {
+      "id": "复奏",
+      "officialName": "复奏",
+      "tier": 2,
+      "covenants": [
+        "莱塔尼亚",
+        "叙拉古",
+        "奇迹"
+      ],
+      "keyTraits": "持续叠加：<刷新时>若为本回合首次主动刷新，使已激活的【莱塔尼亚】【叙拉古】层数 +2 （此干员在整备区也生效）",
+      "eliteTraits": "<刷新时>若为本回合首次主动刷新，使已激活的【叙拉古】【莱塔尼亚】层数 +4 （此干员在整备区也生效）",
+      "prtsUrl": "https://prts.wiki/w/复奏",
+      "pool": "standard"
+    },
+    {
+      "id": "奥斯塔",
+      "officialName": "奥斯塔",
+      "tier": 2,
+      "covenants": [
+        "叙拉古"
+      ],
+      "keyTraits": "整备能力：<获得时>获得一次免费刷新",
+      "eliteTraits": "<获得时>获得两次免费刷新",
+      "prtsUrl": "https://prts.wiki/w/奥斯塔",
+      "pool": "standard"
+    },
+    {
+      "id": "Miss.Christine",
+      "officialName": "Miss.Christine",
+      "tier": 2,
+      "covenants": [
+        "维多利亚",
+        "奥术"
+      ],
+      "keyTraits": "持续叠加：<休整期结束时>使已激活的【维多利亚】【奥术】层数 +3",
+      "eliteTraits": "<休整期结束时>使已激活的【维多利亚】【奥术】层数 +6",
+      "prtsUrl": "https://prts.wiki/w/Miss.Christine",
+      "pool": "standard",
+      "alias": [
+        "克里斯汀",
+        "克里斯汀小姐"
+      ]
+    },
+    {
+      "id": "哈洛德",
+      "officialName": "哈洛德",
+      "tier": 2,
+      "covenants": [
+        "维多利亚",
+        "谢拉格"
+      ],
+      "keyTraits": "作战能力：<战斗中>【维多利亚】【谢拉格】每叠加5层，本干员攻击力 +1%",
+      "eliteTraits": "<战斗中>【维多利亚】【谢拉格】每叠加5层，本干员攻击力 +2%",
+      "prtsUrl": "https://prts.wiki/w/哈洛德",
+      "pool": "standard",
+      "alias": [
+        "哈罗德"
+      ]
+    },
+    {
+      "id": "云迹",
+      "officialName": "云迹",
+      "tier": 2,
+      "covenants": [
+        "灵巧",
+        "奇迹"
+      ],
+      "keyTraits": "持续叠加：<战斗中>每次开启技能时使自身已激活的盟约层数 +3 （每回合至多叠加6层）",
+      "eliteTraits": "<战斗中>每次开启技能时使自身已激活的盟约层数 +6 （每回合至多叠加12层）",
+      "prtsUrl": "https://prts.wiki/w/云迹",
+      "pool": "standard"
+    },
+    {
+      "id": "蛇屠箱",
+      "officialName": "蛇屠箱",
+      "tier": 2,
+      "covenants": [
+        "坚守"
+      ],
+      "keyTraits": "持续叠加：<休整期结束时>使已激活的【坚守】层数 +4",
+      "eliteTraits": "<休整期结束时>使已激活的【坚守】层数 +8",
+      "prtsUrl": "https://prts.wiki/w/蛇屠箱",
+      "pool": "standard"
+    },
+    {
+      "id": "波登可",
+      "officialName": "波登可",
+      "tier": 2,
+      "covenants": [
+        "聚合",
+        "迅捷"
+      ],
+      "keyTraits": "整备能力：<售出时>下回合额外获得 1 资金",
+      "eliteTraits": "<售出时>下回合额外获得 2 资金",
+      "prtsUrl": "https://prts.wiki/w/波登可",
+      "pool": "standard",
+      "alias": [
+        "波可登"
+      ]
+    },
+    {
+      "id": "承曦格雷伊",
+      "officialName": "承曦格雷伊",
+      "tier": 2,
+      "covenants": [
+        "精准",
+        "灵巧"
+      ],
+      "keyTraits": "整备能力：<获得时>获得一件精准狙击镜",
+      "eliteTraits": "<获得时>获得两件精准狙击镜",
+      "prtsUrl": "https://prts.wiki/w/承曦格雷伊",
+      "pool": "standard"
+    },
+    {
+      "id": "锡人",
+      "officialName": "锡人",
+      "tier": 2,
+      "covenants": [
+        "投资人"
+      ],
+      "keyTraits": "单次叠加：<获得时>【投资人】层数 +4",
+      "eliteTraits": "<获得时>【投资人】层数 +8",
+      "prtsUrl": "https://prts.wiki/w/锡人",
+      "pool": "standard"
+    },
+    {
+      "id": "宴",
+      "officialName": "宴",
+      "tier": 2,
+      "covenants": [
+        "不屈"
+      ],
+      "keyTraits": "单次叠加：<获得时>【不屈】层数 +4",
+      "eliteTraits": "<获得时>【不屈】层数 +8",
+      "prtsUrl": "https://prts.wiki/w/宴",
+      "pool": "standard"
+    },
+    {
+      "id": "渡桥",
+      "officialName": "渡桥",
+      "tier": 2,
+      "covenants": [
+        "远见"
+      ],
+      "keyTraits": "持续叠加：<休整期结束时>使自身及身前一格干员已激活的盟约层数 +2",
+      "eliteTraits": "<休整期结束时>使自身及身前一格干员已激活的盟约层数 +4",
+      "prtsUrl": "https://prts.wiki/w/渡桥",
+      "pool": "standard"
+    },
+    {
+      "id": "矩",
+      "officialName": "矩",
+      "tier": 2,
+      "covenants": [
+        "炎"
+      ],
+      "keyTraits": "单次叠加：<获得时>获得等同于当前调度中心等级的【炎】层数",
+      "eliteTraits": "<获得时>获得等同于当前调度中心等级两倍的【炎】层数",
+      "prtsUrl": "https://prts.wiki/w/矩",
+      "pool": "standard"
+    },
+    {
+      "id": "星极",
+      "officialName": "星极",
+      "tier": 2,
+      "covenants": [
+        "奇迹"
+      ],
+      "keyTraits": "作战能力：只需两名本干员即可合成精锐",
+      "eliteTraits": "只需两名本干员即可合成精锐",
+      "prtsUrl": "https://prts.wiki/w/星极",
+      "pool": "standard"
+    },
+    {
+      "id": "瑰盐",
+      "officialName": "瑰盐",
+      "tier": 2,
+      "covenants": [
+        "伊比利亚",
+        "聚合"
+      ],
+      "keyTraits": "作战能力：<战斗中>【伊比利亚】每叠加3层，本干员攻击力 +1%",
+      "eliteTraits": "<战斗中>【伊比利亚】每叠加3层，本干员攻击力 +2%",
+      "prtsUrl": "https://prts.wiki/w/瑰盐",
+      "pool": "standard"
+    },
+    {
+      "id": "真理",
+      "officialName": "真理",
+      "tier": 2,
+      "covenants": [
+        "乌萨斯"
+      ],
+      "keyTraits": "整备能力：购买价格为 1",
+      "eliteTraits": null,
+      "prtsUrl": "https://prts.wiki/w/真理",
+      "pool": "standard"
+    },
+    {
+      "id": "铸铁",
+      "officialName": "铸铁",
+      "tier": 2,
+      "covenants": [
+        "突袭"
+      ],
+      "keyTraits": "持续叠加：<休整期结束时>使已激活的【突袭】层数 +3",
+      "eliteTraits": "<休整期结束时>使已激活的【突袭】层数 +6",
+      "prtsUrl": "https://prts.wiki/w/铸铁",
+      "pool": "standard"
+    },
+    {
+      "id": "星源",
+      "officialName": "星源",
+      "tier": 2,
+      "covenants": [
+        "助力"
+      ],
+      "keyTraits": "持续叠加：<休整期结束时>使当前已激活且层数最多的盟约层数 +2 （此干员在整备区也生效）",
+      "eliteTraits": "<休整期结束时>使当前已激活且层数最多的盟约层数 +4 （此干员在整备区也生效）",
+      "prtsUrl": "https://prts.wiki/w/星源",
+      "pool": "standard"
+    },
+    {
+      "id": "安哲拉",
+      "officialName": "安哲拉",
+      "tier": 2,
+      "covenants": [
+        "阿戈尔",
+        "助力"
+      ],
+      "keyTraits": "持续叠加：<战斗中>每击倒一名敌人或我方干员使已激活的【阿戈尔】【助力】层数 +3 （每回合至多叠加9层）",
+      "eliteTraits": "<战斗中>每击倒一名敌人或我方干员使已激活的【阿戈尔】【助力】层数 +6 （每回合至多叠加18层）",
+      "prtsUrl": "https://prts.wiki/w/安哲拉",
+      "pool": "standard"
+    },
+    {
+      "id": "车尔尼",
+      "officialName": "车尔尼",
+      "tier": 3,
+      "covenants": [
+        "莱塔尼亚",
+        "坚守"
+      ],
+      "keyTraits": "整备能力：<获得时>获得一件“莱塔尼亚小鼓”",
+      "eliteTraits": "<获得时>获得两件“莱塔尼亚小鼓”",
+      "prtsUrl": "https://prts.wiki/w/车尔尼",
+      "pool": "standard"
+    },
+    {
+      "id": "卡涅利安",
+      "officialName": "卡涅利安",
+      "tier": 3,
+      "covenants": [
+        "莱塔尼亚",
+        "萨尔贡",
+        "迅捷"
+      ],
+      "keyTraits": "整备能力：<获得时>获得一件“迅捷作战粮”",
+      "eliteTraits": "<获得时>获得两件“迅捷作战粮”",
+      "prtsUrl": "https://prts.wiki/w/卡涅利安",
+      "pool": "standard"
+    },
+    {
+      "id": "乌啾",
+      "officialName": "乌啾",
+      "tier": 3,
+      "covenants": [
+        "乌萨斯",
+        "聚合"
+      ],
+      "keyTraits": "持续叠加：<进入休整期时>场上每有一名【乌萨斯】干员，转化 1 层【乌萨斯】临时层数为固定层数",
+      "eliteTraits": "<进入休整期时>场上每有一名【乌萨斯】干员，转化 2 层【乌萨斯】临时层数为固定层数",
+      "prtsUrl": "https://prts.wiki/w/乌啾",
+      "pool": "standard"
+    },
+    {
+      "id": "海沫",
+      "officialName": "海沫",
+      "tier": 3,
+      "covenants": [
+        "伊比利亚",
+        "不屈"
+      ],
+      "keyTraits": "整备能力：<休整期结束时>自身售出价格 +1 （自身售出价格至多为4）",
+      "eliteTraits": "<休整期结束时>自身售出价格 +2 （自身售出价格至多为8）",
+      "prtsUrl": "https://prts.wiki/w/海沫",
+      "pool": "standard"
+    },
+    {
+      "id": "旅骨",
+      "officialName": "旅骨",
+      "tier": 3,
+      "covenants": [
+        "伊比利亚",
+        "精准"
+      ],
+      "keyTraits": "持续叠加：<休整期结束时>使自身及身前一格干员已激活的盟约叠加等同于其售出价格的层数",
+      "eliteTraits": "<休整期结束时>使自身及身前一格干员已激活的盟约叠加等同于其售出价格2倍的层数",
+      "prtsUrl": "https://prts.wiki/w/旅骨",
+      "pool": "standard"
+    },
+    {
+      "id": "风絮",
+      "officialName": "风絮",
+      "tier": 3,
+      "covenants": [
+        "炎",
+        "聚合"
+      ],
+      "keyTraits": "持续叠加：<休整期结束时> 本回合每获得过一名干员，使已激活的【炎】【聚合】层数 +2 （每回合至多叠加16层）",
+      "eliteTraits": "<休整期结束时> 本回合每获得过一名干员，使已激活的【炎】【聚合】层数 +4 （每回合至多叠加32层）",
+      "prtsUrl": "https://prts.wiki/w/风絮",
+      "pool": "standard"
+    },
+    {
+      "id": "极光",
+      "officialName": "极光",
+      "tier": 3,
+      "covenants": [
+        "谢拉格"
+      ],
+      "keyTraits": "单次叠加：<获得时> 【谢拉格】层数 +1 （每次触发后升级，至多叠加12层）",
+      "eliteTraits": null,
+      "prtsUrl": "https://prts.wiki/w/极光",
+      "pool": "standard",
+      "alias": [
+        "昼雪"
+      ],
+      "aliasNote": "社区一览曾把谢拉格三阶写成「昼雪」，本期预设为极光、耶拉、初雪。「昼雪」未对上 PRTS 图鉴，只作别名检索，不入谢拉格池。"
+    },
+    {
+      "id": "耶拉",
+      "officialName": "耶拉",
+      "tier": 3,
+      "covenants": [
+        "谢拉格",
+        "奇迹"
+      ],
+      "keyTraits": "整备能力：<获得时>获得一件“谢拉格不融冰”",
+      "eliteTraits": "<获得时>获得两件“谢拉格不融冰”",
+      "prtsUrl": "https://prts.wiki/w/耶拉",
+      "pool": "standard"
+    },
+    {
+      "id": "初雪",
+      "officialName": "初雪",
+      "tier": 3,
+      "covenants": [
+        "谢拉格",
+        "协防干员"
+      ],
+      "keyTraits": "持续叠加：<战斗中>攻击范围内每有一名敌人进入冻结使已激活的【谢拉格】层数 +1 （每回合至多叠加16层）",
+      "eliteTraits": "<战斗中>攻击范围内每有一名敌人进入冻结使已激活的【谢拉格】层数 +2 （每回合至多叠加32层）",
+      "prtsUrl": "https://prts.wiki/w/初雪",
+      "pool": "standard"
+    },
+    {
+      "id": "深巡",
+      "officialName": "深巡",
+      "tier": 3,
+      "covenants": [
+        "阿戈尔",
+        "坚守"
+      ],
+      "keyTraits": "作战能力：<战斗中>部署时【阿戈尔】盟约每叠加20层，使自身及周围四格的干员攻击速度 +1，持续30秒",
+      "eliteTraits": "<战斗中>部署时【阿戈尔】盟约每叠加10层，使自身及周围四格的干员攻击速度 +1，持续30秒",
+      "prtsUrl": "https://prts.wiki/w/深巡",
+      "pool": "standard"
+    },
+    {
+      "id": "斯卡蒂",
+      "officialName": "斯卡蒂",
+      "tier": 3,
+      "covenants": [
+        "阿戈尔",
+        "突袭"
+      ],
+      "keyTraits": "持续叠加：<战斗中>部署时使已激活的【阿戈尔】层数 +4 （每场战斗至多叠加8层）",
+      "eliteTraits": "<战斗中>部署时使已激活的【阿戈尔】层数 +8 （每场战斗至多叠加16层）",
+      "prtsUrl": "https://prts.wiki/w/斯卡蒂",
+      "pool": "standard"
+    },
+    {
+      "id": "瑕光",
+      "officialName": "瑕光",
+      "tier": 3,
+      "covenants": [
+        "卡西米尔",
+        "突袭"
+      ],
+      "keyTraits": "持续叠加：<战斗中>部署时使自身已激活的盟约层数 +3 （每场战斗至多叠加9层）",
+      "eliteTraits": "<战斗中>部署时使自身已激活的盟约层数 +6 （每场战斗至多叠加18层）",
+      "prtsUrl": "https://prts.wiki/w/瑕光",
+      "pool": "standard"
+    },
+    {
+      "id": "忍冬",
+      "officialName": "忍冬",
+      "tier": 3,
+      "covenants": [
+        "叙拉古",
+        "迅捷"
+      ],
+      "keyTraits": "整备能力：<获得时> 获得 1 次免费刷新（触发2次后升级，至多获得3次免费刷新）",
+      "eliteTraits": null,
+      "prtsUrl": "https://prts.wiki/w/忍冬",
+      "pool": "standard"
+    },
+    {
+      "id": "伺夜",
+      "officialName": "伺夜",
+      "tier": 3,
+      "covenants": [
+        "叙拉古",
+        "精准"
+      ],
+      "keyTraits": "持续叠加：<战斗中>造成的伤害变为弱点伤害（根据敌人的防御力与法术抗性变换伤害类型）； 每击倒一名敌人使已激活的【叙拉古】【精准】层数 +2 （每回合至多叠加8层）",
+      "eliteTraits": "<战斗中>造成的伤害变为弱点伤害（根据敌人的防御力与法术抗性变换伤害类型）； 每击倒一名敌人使已激活的【叙拉古】【精准】层数 +4 （每回合至多叠加16层）",
+      "prtsUrl": "https://prts.wiki/w/伺夜",
+      "pool": "standard",
+      "alias": [
+        "四爷"
+      ]
+    },
+    {
+      "id": "水灯心",
+      "officialName": "水灯心",
+      "tier": 3,
+      "covenants": [
+        "维多利亚",
+        "独行",
+        "灵巧"
+      ],
+      "keyTraits": "作战能力：<战斗中>造成的伤害变为弱点伤害（根据敌人的防御力与法术抗性变换伤害类型）",
+      "eliteTraits": null,
+      "prtsUrl": "https://prts.wiki/w/水灯心",
+      "pool": "standard"
+    },
+    {
+      "id": "空弦",
+      "officialName": "空弦",
+      "tier": 3,
+      "covenants": [
+        "精准",
+        "远见"
+      ],
+      "keyTraits": "持续叠加：<进入休整期时>使自身及身前一格干员已激活的盟约层数 +3",
+      "eliteTraits": "<进入休整期时>使自身及身前一格干员已激活的盟约层数 +6",
+      "prtsUrl": "https://prts.wiki/w/空弦",
+      "pool": "standard"
+    },
+    {
+      "id": "吉星",
+      "officialName": "吉星",
+      "tier": 3,
+      "covenants": [
+        "奇迹"
+      ],
+      "keyTraits": "整备能力：<售出时>进行一次 I阶 干员的免费特殊招募 本干员合成为精锐状态后，上述特殊招募变为 V阶 干员",
+      "eliteTraits": "<售出时>进行一次 V阶 干员的免费特殊招募",
+      "prtsUrl": "https://prts.wiki/w/吉星",
+      "pool": "standard"
+    },
+    {
+      "id": "伊桑",
+      "officialName": "伊桑",
+      "tier": 3,
+      "covenants": [
+        "奥术",
+        "突袭"
+      ],
+      "keyTraits": "整备能力：<售出时>随机获得一名当前人数最多盟约的干员（不高于当前调度中心等级；无法获得自身）",
+      "eliteTraits": null,
+      "prtsUrl": "https://prts.wiki/w/伊桑",
+      "pool": "standard"
+    },
+    {
+      "id": "罗比菈塔",
+      "officialName": "罗比菈塔",
+      "tier": 3,
+      "covenants": [
+        "坚守",
+        "助力"
+      ],
+      "keyTraits": "持续叠加：<休整期结束时>同一行每有1名干员，使已激活的【坚守】【助力】层数 +2",
+      "eliteTraits": "<休整期结束时>同一行每有1名干员，使已激活的【坚守】【助力】层数 +4",
+      "prtsUrl": "https://prts.wiki/w/罗比菈塔",
+      "pool": "standard",
+      "alias": [
+        "罗比拉塔"
+      ]
+    },
+    {
+      "id": "乌有",
+      "officialName": "乌有",
+      "tier": 3,
+      "covenants": [
+        "炎"
+      ],
+      "keyTraits": "整备能力：<获得时>获得一枚“盟约之币”",
+      "eliteTraits": "<获得时>获得两枚“盟约之币”",
+      "prtsUrl": "https://prts.wiki/w/乌有",
+      "pool": "standard"
+    },
+    {
+      "id": "历阵锐枪芬",
+      "officialName": "历阵锐枪芬",
+      "tier": 3,
+      "covenants": [
+        "卡西米尔",
+        "远见"
+      ],
+      "keyTraits": "作战能力：<战斗中>被击倒时召唤整备区的一名【卡西米尔】干员（优先选择最右侧）上场，并使整备区干员的当前再部署时间 -30%",
+      "eliteTraits": "<战斗中>被击倒时召唤整备区的一名【卡西米尔】干员（优先选择最右侧）上场，并使整备区干员的当前再部署时间 -60%",
+      "prtsUrl": "https://prts.wiki/w/历阵锐枪芬",
+      "pool": "standard"
+    },
+    {
+      "id": "凯瑟琳",
+      "officialName": "凯瑟琳",
+      "tier": 3,
+      "covenants": [
+        "维多利亚",
+        "远见"
+      ],
+      "keyTraits": "整备能力：<获得时>获得一件维式重锤，小概率获得特殊维式重锤",
+      "eliteTraits": "<获得时>获得一件特殊维式重锤，小概率获得终极维式重锤",
+      "prtsUrl": "https://prts.wiki/w/凯瑟琳",
+      "pool": "standard",
+      "alias": [
+        "凯特琳"
+      ]
+    },
+    {
+      "id": "盟约·辅助干员",
+      "officialName": "盟约·辅助干员",
+      "tier": 3,
+      "covenants": [
+        "调和"
+      ],
+      "keyTraits": "作战能力：<战斗中>攻击力和生命上限+ 20%",
+      "eliteTraits": "<战斗中>攻击力和生命上限+ 40%",
+      "prtsUrl": "https://prts.wiki/w/盟约·辅助干员",
+      "pool": "special",
+      "notes": "Ⅲ阶调和干员，见 PRTS 参战干员一览。1 名即可激活调和（场上核心盟约激活人数+1）。"
+    },
+    {
+      "id": "风丸",
+      "officialName": "风丸",
+      "tier": 3,
+      "covenants": [
+        "不屈"
+      ],
+      "keyTraits": "持续叠加：<战斗中>自身被击倒或与傀儡发生替换时使已激活的【不屈】层数 +2 （每回合至多叠加10层）",
+      "eliteTraits": "<战斗中>自身被击倒或与傀儡发生替换时使已激活的【不屈】层数 +4 （每回合至多叠加20层）",
+      "prtsUrl": "https://prts.wiki/w/风丸",
+      "pool": "standard"
+    },
+    {
+      "id": "至简",
+      "officialName": "至简",
+      "tier": 3,
+      "covenants": [
+        "萨尔贡"
+      ],
+      "keyTraits": "整备能力：购买价格为 1",
+      "eliteTraits": null,
+      "prtsUrl": "https://prts.wiki/w/至简",
+      "pool": "standard"
+    },
+    {
+      "id": "奥尔佳",
+      "officialName": "奥尔佳",
+      "tier": 3,
+      "covenants": [
+        "乌萨斯",
+        "灵巧"
+      ],
+      "keyTraits": "整备能力：<获得时>获得一件乌萨斯呼吸器",
+      "eliteTraits": "<获得时>获得两件乌萨斯呼吸器",
+      "prtsUrl": "https://prts.wiki/w/奥尔佳",
+      "pool": "standard",
+      "alias": [
+        "奥尔加"
+      ]
+    },
+    {
+      "id": "青枳",
+      "officialName": "青枳",
+      "tier": 3,
+      "covenants": [
+        "坚守",
+        "迅捷"
+      ],
+      "keyTraits": "持续叠加：<进入休整期时>使自身及身后一格干员已激活的盟约层数 +3",
+      "eliteTraits": "<进入休整期时>使自身及身后一格干员已激活的盟约层数 +6",
+      "prtsUrl": "https://prts.wiki/w/青枳",
+      "pool": "standard"
+    },
+    {
+      "id": "黑键",
+      "officialName": "黑键",
+      "tier": 4,
+      "covenants": [
+        "莱塔尼亚",
+        "精准"
+      ],
+      "keyTraits": "持续叠加：<战斗中>攻击范围内每有一名敌人被击倒使已激活的【莱塔尼亚】【精准】层数 +1 （每回合至多叠加8层）",
+      "eliteTraits": "<战斗中>攻击范围内每有一名敌人被击倒使已激活的【莱塔尼亚】【精准】层数 +2 （每回合至多叠加16层）",
+      "prtsUrl": "https://prts.wiki/w/黑键",
+      "pool": "standard"
+    },
+    {
+      "id": "艾雅法拉",
+      "officialName": "艾雅法拉",
+      "tier": 4,
+      "covenants": [
+        "莱塔尼亚",
+        "奥术"
+      ],
+      "keyTraits": "作战能力：<战斗中>【莱塔尼亚】【奥术】每叠加2层，本干员技力自然回复速度 +0.02 /秒，攻击力 +1%",
+      "eliteTraits": "<战斗中>【莱塔尼亚】【奥术】每叠加1层，本干员技力自然回复速度 +0.02 /秒，攻击力 +1%",
+      "prtsUrl": "https://prts.wiki/w/艾雅法拉",
+      "pool": "standard"
+    },
+    {
+      "id": "赫拉格",
+      "officialName": "赫拉格",
+      "tier": 4,
+      "covenants": [
+        "乌萨斯",
+        "突袭"
+      ],
+      "keyTraits": "持续叠加：<战斗中>部署时使已激活的【乌萨斯】【突袭】层数 +4 （每场战斗至多叠加12层）",
+      "eliteTraits": "<战斗中>部署时使已激活的【乌萨斯】【突袭】层数 +8 （每场战斗至多叠加24层）",
+      "prtsUrl": "https://prts.wiki/w/赫拉格",
+      "pool": "standard"
+    },
+    {
+      "id": "维伊",
+      "officialName": "维伊",
+      "tier": 4,
+      "covenants": [
+        "乌萨斯",
+        "奥术"
+      ],
+      "keyTraits": "作战能力：<战斗中>【乌萨斯】每叠加2层，本干员攻击速度 +1",
+      "eliteTraits": "<战斗中>【乌萨斯】每叠加1层，本干员攻击速度 +1",
+      "prtsUrl": "https://prts.wiki/w/维伊",
+      "pool": "standard",
+      "alias": [
+        "唯伊"
+      ]
+    },
+    {
+      "id": "温蒂",
+      "officialName": "温蒂",
+      "tier": 4,
+      "covenants": [
+        "伊比利亚",
+        "坚守"
+      ],
+      "keyTraits": "整备能力：售出价格为 3",
+      "eliteTraits": "售出价格为 6",
+      "prtsUrl": "https://prts.wiki/w/温蒂",
+      "pool": "standard"
+    },
+    {
+      "id": "流明",
+      "officialName": "流明",
+      "tier": 4,
+      "covenants": [
+        "伊比利亚",
+        "聚合"
+      ],
+      "keyTraits": "持续叠加：<战斗结束时>每有一名存活的我方干员，使已激活的【伊比利亚】【聚合】层数 +1",
+      "eliteTraits": "<战斗结束时>每有一名存活的我方干员，使已激活的【伊比利亚】【聚合】层数 +2",
+      "prtsUrl": "https://prts.wiki/w/流明",
+      "pool": "standard"
+    },
+    {
+      "id": "余",
+      "officialName": "余",
+      "tier": 4,
+      "covenants": [
+        "炎",
+        "坚守"
+      ],
+      "keyTraits": "持续叠加：<战斗中>周围八格每有一名敌人触发元素损伤爆发使自身已激活的盟约层数 +1 （每回合至多叠加8层）",
+      "eliteTraits": "<战斗中>周围八格每有一名敌人触发元素损伤爆发使自身已激活的盟约层数 +2 （每回合至多叠加16层）",
+      "prtsUrl": "https://prts.wiki/w/余",
+      "pool": "standard"
+    },
+    {
+      "id": "森蚺",
+      "officialName": "森蚺",
+      "tier": 4,
+      "covenants": [
+        "萨尔贡",
+        "不屈"
+      ],
+      "keyTraits": "持续叠加：<战斗中>部署时使已激活的【萨尔贡】【不屈】盟约层数+4（每回合至多叠加12层）",
+      "eliteTraits": "<战斗中>部署时使已激活的【萨尔贡】【不屈】盟约层数+8（每回合至多叠加24层）",
+      "prtsUrl": "https://prts.wiki/w/森蚺",
+      "pool": "standard"
+    },
+    {
+      "id": "灵知",
+      "officialName": "灵知",
+      "tier": 4,
+      "covenants": [
+        "谢拉格",
+        "迅捷"
+      ],
+      "keyTraits": "整备能力：<获得时>获得一次特殊刷新，下次刷新至少出现一名谢拉格干员",
+      "eliteTraits": "<获得时>获得一次特殊刷新，下次刷新至少出现两名谢拉格干员",
+      "prtsUrl": "https://prts.wiki/w/灵知",
+      "pool": "standard",
+      "alias": [
+        "灵芝"
+      ]
+    },
+    {
+      "id": "归溟幽灵鲨",
+      "officialName": "归溟幽灵鲨",
+      "tier": 4,
+      "covenants": [
+        "阿戈尔",
+        "不屈"
+      ],
+      "keyTraits": "作战能力：<战斗中>自身被击倒或与替身发生替换时使周围八格的【阿戈尔】干员回复 5 点技力",
+      "eliteTraits": "<战斗中>自身被击倒或与替身发生替换时使周围八格的【阿戈尔】干员回复 10 点技力",
+      "prtsUrl": "https://prts.wiki/w/归溟幽灵鲨",
+      "pool": "standard"
+    },
+    {
+      "id": "水月",
+      "officialName": "水月",
+      "tier": 4,
+      "covenants": [
+        "阿戈尔",
+        "灵巧"
+      ],
+      "keyTraits": "作战能力：<战斗中>【阿戈尔】盟约每叠加20层，自身及周围四格干员每次造成伤害时使目标移动速度 -1%，持续3秒",
+      "eliteTraits": "<战斗中>【阿戈尔】盟约每叠加10层，自身及周围四格干员每次造成伤害时使目标移动速度 -1%，持续3秒",
+      "prtsUrl": "https://prts.wiki/w/水月",
+      "pool": "standard"
+    },
+    {
+      "id": "远牙",
+      "officialName": "远牙",
+      "tier": 4,
+      "covenants": [
+        "卡西米尔",
+        "精准"
+      ],
+      "keyTraits": "作战能力：<战斗中>攻击范围内每有一名敌人被击倒使攻击范围内及整备区中的干员再部署时间 -3秒",
+      "eliteTraits": "<战斗中>攻击范围内每有一名敌人被击倒使攻击范围内及整备区中的干员再部署时间 -6秒",
+      "prtsUrl": "https://prts.wiki/w/远牙",
+      "pool": "standard"
+    },
+    {
+      "id": "玛恩纳",
+      "officialName": "玛恩纳",
+      "tier": 4,
+      "covenants": [
+        "卡西米尔"
+      ],
+      "keyTraits": "作战能力：<战斗中>【卡西米尔】每叠加5层，本干员部署后100秒内基础攻击力 +10、基础生命上限 +50",
+      "eliteTraits": "<战斗中>【卡西米尔】每叠加5层，本干员部署后100秒内基础攻击力 +20、基础生命上限 +100",
+      "prtsUrl": "https://prts.wiki/w/玛恩纳",
+      "pool": "standard"
+    },
+    {
+      "id": "涤火杰西卡",
+      "officialName": "涤火杰西卡",
+      "tier": 4,
+      "covenants": [
+        "维多利亚",
+        "坚守"
+      ],
+      "keyTraits": "持续叠加：<休整期结束时>场上每有一名携带装备的干员，使已激活的【维多利亚】【坚守】层数 +2",
+      "eliteTraits": "<休整期结束时>场上每有一名携带装备的干员，使已激活的【维多利亚】【坚守】层数 +4",
+      "prtsUrl": "https://prts.wiki/w/涤火杰西卡",
+      "pool": "standard"
+    },
+    {
+      "id": "白铁",
+      "officialName": "白铁",
+      "tier": 4,
+      "covenants": [
+        "维多利亚",
+        "助力"
+      ],
+      "keyTraits": "整备能力：<进入休整期时>使自身携带的装备变为精锐版本",
+      "eliteTraits": null,
+      "prtsUrl": "https://prts.wiki/w/白铁",
+      "pool": "standard"
+    },
+    {
+      "id": "斥罪",
+      "officialName": "斥罪",
+      "tier": 4,
+      "covenants": [
+        "叙拉古",
+        "不屈"
+      ],
+      "keyTraits": "作战能力：<战斗中>【叙拉古】【不屈】每叠加3层，本干员攻击力 +1%",
+      "eliteTraits": "<战斗中>【叙拉古】【不屈】每叠加3层，本干员攻击力 +2%",
+      "prtsUrl": "https://prts.wiki/w/斥罪",
+      "pool": "standard"
+    },
+    {
+      "id": "W",
+      "officialName": "W",
+      "tier": 4,
+      "covenants": [
+        "迅捷"
+      ],
+      "keyTraits": "作战能力：<战斗中>【迅捷】每叠加3层，本干员攻击力 +1%",
+      "eliteTraits": "<战斗中>【迅捷】每叠加3层，本干员攻击力 +2%",
+      "prtsUrl": "https://prts.wiki/w/W",
+      "pool": "standard"
+    },
+    {
+      "id": "霍尔海雅",
+      "officialName": "霍尔海雅",
+      "tier": 4,
+      "covenants": [
+        "奥术",
+        "精准"
+      ],
+      "keyTraits": "持续叠加：<战斗中>每次开启技能时使自身已激活的盟约层数 +4 （每场战斗至多叠加12层）",
+      "eliteTraits": "<战斗中>每次开启技能时使自身已激活的盟约层数 +8 （每场战斗至多叠加24层）",
+      "prtsUrl": "https://prts.wiki/w/霍尔海雅",
+      "pool": "standard"
+    },
+    {
+      "id": "山",
+      "officialName": "山",
+      "tier": 4,
+      "covenants": [
+        "投资人"
+      ],
+      "keyTraits": "作战能力：<战斗中>造成的伤害变为弱点伤害（根据敌人的防御力与法术抗性变换伤害类型）",
+      "eliteTraits": null,
+      "prtsUrl": "https://prts.wiki/w/山",
+      "pool": "standard"
+    },
+    {
+      "id": "淬羽赫默",
+      "officialName": "淬羽赫默",
+      "tier": 4,
+      "covenants": [
+        "助力"
+      ],
+      "keyTraits": "持续叠加：<休整期结束时>使整备区每名干员已激活的盟约层数 +1",
+      "eliteTraits": "<休整期结束时>使整备区每名干员已激活的盟约层数 +2",
+      "prtsUrl": "https://prts.wiki/w/淬羽赫默",
+      "pool": "standard"
+    },
+    {
+      "id": "赫德雷",
+      "officialName": "赫德雷",
+      "tier": 4,
+      "covenants": [
+        "突袭"
+      ],
+      "keyTraits": "持续叠加：<战斗中>部署时使已激活的【突袭】层数 +4 （每回合至多叠加16层）",
+      "eliteTraits": "<战斗中>部署时使已激活的【突袭】层数 +8 （每回合至多叠加32层）",
+      "prtsUrl": "https://prts.wiki/w/赫德雷",
+      "pool": "standard"
+    },
+    {
+      "id": "夜莺",
+      "officialName": "夜莺",
+      "tier": 4,
+      "covenants": [
+        "聚合",
+        "协防干员"
+      ],
+      "keyTraits": "持续叠加：<战斗结束时>每有一名存活的我方干员，使自身已激活的盟约层数 +1",
+      "eliteTraits": "<战斗结束时>每有一名存活的我方干员，使自身已激活的盟约层数 +2",
+      "prtsUrl": "https://prts.wiki/w/夜莺",
+      "pool": "standard"
+    },
+    {
+      "id": "仇白",
+      "officialName": "仇白",
+      "tier": 4,
+      "covenants": [
+        "炎",
+        "灵巧"
+      ],
+      "keyTraits": "单次叠加：<获得时>【炎】【灵巧】层数 +6",
+      "eliteTraits": "<获得时>【炎】【灵巧】层数 +12",
+      "prtsUrl": "https://prts.wiki/w/仇白",
+      "pool": "standard"
+    },
+    {
+      "id": "异客",
+      "officialName": "异客",
+      "tier": 4,
+      "covenants": [
+        "萨尔贡",
+        "奥术"
+      ],
+      "keyTraits": "整备能力：<进入休整期时>获得1件“盟约之币”或“萨尔贡浓茶”，有小概率发现“拟态物质”",
+      "eliteTraits": "<进入休整期时>获得2件“盟约之币”或“萨尔贡浓茶”，有小概率发现“拟态物质”",
+      "prtsUrl": "https://prts.wiki/w/异客",
+      "pool": "standard"
+    },
+    {
+      "id": "安洁莉娜",
+      "officialName": "安洁莉娜",
+      "tier": 4,
+      "covenants": [
+        "叙拉古",
+        "奇迹"
+      ],
+      "keyTraits": "持续叠加：<休整期结束时>本回合每进行过1次刷新，使已激活的【叙拉古】层数 +2 （每回合至多叠加8层），【奇迹】层数 +1 （每回合至多叠加4层）",
+      "eliteTraits": "<休整期结束时>本回合每进行过1次刷新，使已激活的【叙拉古】层数 +4 （每回合至多叠加16层），【奇迹】层数 +2 （每回合至多叠加8层）",
+      "prtsUrl": "https://prts.wiki/w/安洁莉娜",
+      "pool": "standard",
+      "alias": [
+        "洁哥"
+      ]
+    },
+    {
+      "id": "华法琳",
+      "officialName": "华法琳",
+      "tier": 4,
+      "covenants": [
+        "灵巧",
+        "聚合"
+      ],
+      "keyTraits": "持续叠加：<战斗开始时>使身前一格干员获得特质“<开启技能时>使自身已激活的盟约层数 +1 （每回合至多叠加7层）” <战斗开始时>使身前一格干员获得特质“<开启技能时>使自身已激活的盟约层数 +2 （每回合至多叠加14层）”",
+      "eliteTraits": null,
+      "prtsUrl": "https://prts.wiki/w/华法琳",
+      "pool": "standard",
+      "alias": [
+        "华法林"
+      ]
+    },
+    {
+      "id": "寒檀",
+      "officialName": "寒檀",
+      "tier": 4,
+      "covenants": [
+        "远见"
+      ],
+      "keyTraits": "持续叠加：<休整期结束时><休整期开始时>使已激活的【远见】层数 +3 <休整期结束时><休整期开始时>使已激活的【远见】层数 +6",
+      "eliteTraits": null,
+      "prtsUrl": "https://prts.wiki/w/寒檀",
+      "pool": "standard"
+    },
+    {
+      "id": "纯烬艾雅法拉",
+      "officialName": "纯烬艾雅法拉",
+      "tier": 5,
+      "covenants": [
+        "聚合",
+        "莱塔尼亚",
+        "远见"
+      ],
+      "keyTraits": "持续叠加：<战斗中>攻击范围内每有一名敌人被击倒使已激活的【莱塔尼亚】【聚合】层数 +2 （每场战斗至多叠加20层）",
+      "eliteTraits": "<战斗中>攻击范围内每有一名敌人被击倒使已激活的【莱塔尼亚】【聚合】层数 +4 （每场战斗至多叠加40层）",
+      "prtsUrl": "https://prts.wiki/w/纯烬艾雅法拉",
+      "pool": "standard"
+    },
+    {
+      "id": "怒潮凛冬",
+      "officialName": "怒潮凛冬",
+      "tier": 5,
+      "covenants": [
+        "乌萨斯",
+        "奇迹"
+      ],
+      "keyTraits": "作战能力：<战斗中>【乌萨斯】【奇迹】每叠加10层，本干员技力自然回复速度 +0.1 /秒，攻击力 +1%",
+      "eliteTraits": "<战斗中>【乌萨斯】【奇迹】每叠加10层，本干员技力自然回复速度 +0.2 /秒，攻击力 +2%",
+      "prtsUrl": "https://prts.wiki/w/怒潮凛冬",
+      "pool": "standard"
+    },
+    {
+      "id": "艾丽妮",
+      "officialName": "艾丽妮",
+      "tier": 5,
+      "covenants": [
+        "伊比利亚"
+      ],
+      "keyTraits": "作战能力：<战斗中>周围12格每有一名敌人被击倒自身回复 3 点技力",
+      "eliteTraits": "<战斗中>周围12格每有一名敌人被击倒自身回复 6 点技力",
+      "prtsUrl": "https://prts.wiki/w/艾丽妮",
+      "pool": "standard"
+    },
+    {
+      "id": "棘刺",
+      "officialName": "棘刺",
+      "tier": 5,
+      "covenants": [
+        "伊比利亚",
+        "奥术"
+      ],
+      "keyTraits": "持续叠加：<休整期结束时>使已激活的【伊比利亚】叠加等同于场上所有干员售出价格的层数（每回合至多叠加12层）",
+      "eliteTraits": "<休整期结束时>使已激活的【伊比利亚】叠加等同于场上所有干员售出价格2倍的层数（每回合至多叠加24层）",
+      "prtsUrl": "https://prts.wiki/w/棘刺",
+      "pool": "standard"
+    },
+    {
+      "id": "黍",
+      "officialName": "黍",
+      "tier": 5,
+      "covenants": [
+        "炎",
+        "远见"
+      ],
+      "keyTraits": "单次叠加：<获得时>【炎】层数 +8，【远见】层数 +4",
+      "eliteTraits": "<获得时>【炎】层数 +16，【远见】层数 +8",
+      "prtsUrl": "https://prts.wiki/w/黍",
+      "pool": "standard"
+    },
+    {
+      "id": "佩佩",
+      "officialName": "佩佩",
+      "tier": 5,
+      "covenants": [
+        "萨尔贡",
+        "灵巧"
+      ],
+      "keyTraits": "持续叠加：<战斗中>周围八格每有一名敌人或干员进入沉睡或眩晕时使自身及身后一格干员已激活的盟约层数 +1 （每回合至多叠加9层）",
+      "eliteTraits": "<战斗中>周围八格每有一名敌人或干员进入沉睡或眩晕时使自身及身后一格干员已激活的盟约层数 +2 （每回合至多叠加18层）",
+      "prtsUrl": "https://prts.wiki/w/佩佩",
+      "pool": "standard"
+    },
+    {
+      "id": "圣聆初雪",
+      "officialName": "圣聆初雪",
+      "tier": 5,
+      "covenants": [
+        "谢拉格",
+        "奥术"
+      ],
+      "keyTraits": "持续叠加：<战斗中>攻击范围内每有一名敌人陷入冻结自身回复 1 点技力，并使已激活的【谢拉格】层数 +1 （每回合至多叠加24层）",
+      "eliteTraits": "<战斗中>攻击范围内每有一名敌人冻结自身回复 2 点技力，并使已激活的【谢拉格】层数 +2 （每回合至多叠加48层）",
+      "prtsUrl": "https://prts.wiki/w/圣聆初雪",
+      "pool": "standard"
+    },
+    {
+      "id": "凛御银灰",
+      "officialName": "凛御银灰",
+      "tier": 5,
+      "covenants": [
+        "谢拉格",
+        "灵巧",
+        "投资人"
+      ],
+      "keyTraits": "持续叠加：<战斗中>身前一格【谢拉格】【灵巧】干员每场战斗的叠层上限 +75%",
+      "eliteTraits": "<战斗中>身前一格【谢拉格】【灵巧】干员每场战斗的叠层上限 +150%",
+      "prtsUrl": "https://prts.wiki/w/凛御银灰",
+      "pool": "standard"
+    },
+    {
+      "id": "歌蕾蒂娅",
+      "officialName": "歌蕾蒂娅",
+      "tier": 5,
+      "covenants": [
+        "阿戈尔"
+      ],
+      "keyTraits": "整备能力：<进入休整期时>若同一行有3名干员，获得1个幽灵鲨、安哲拉、深巡或斯卡蒂",
+      "eliteTraits": "<进入休整期时>获得1个幽灵鲨、安哲拉、深巡或斯卡蒂",
+      "prtsUrl": "https://prts.wiki/w/歌蕾蒂娅",
+      "pool": "standard"
+    },
+    {
+      "id": "乌尔比安",
+      "officialName": "乌尔比安",
+      "tier": 5,
+      "covenants": [
+        "阿戈尔"
+      ],
+      "keyTraits": "作战能力：<战斗中>部署时【阿戈尔】盟约每叠加20层，使自身及周围四格的干员攻击力 +1%，持续30秒",
+      "eliteTraits": "<战斗中>部署时【阿戈尔】盟约每叠加10层，使自身及周围四格的干员攻击力 +1%，持续30秒",
+      "prtsUrl": "https://prts.wiki/w/乌尔比安",
+      "pool": "standard"
+    },
+    {
+      "id": "薇薇安娜",
+      "officialName": "薇薇安娜",
+      "tier": 5,
+      "covenants": [
+        "莱塔尼亚",
+        "卡西米尔",
+        "奥术"
+      ],
+      "keyTraits": "持续叠加：<战斗中>场上其他与自身拥有相同盟约的干员在本回合战斗期的叠层上限 +7",
+      "eliteTraits": "<战斗中>场上其他与自身拥有相同盟约的干员在本回合战斗期的叠层上限 +14",
+      "prtsUrl": "https://prts.wiki/w/薇薇安娜",
+      "pool": "standard"
+    },
+    {
+      "id": "铃兰",
+      "officialName": "铃兰",
+      "tier": 5,
+      "covenants": [
+        "叙拉古"
+      ],
+      "keyTraits": "特异化：<进入休整期时>触发身前一格的其他干员的“获得时”类效果",
+      "eliteTraits": "<进入休整期时>触发身前两格的其他干员的“获得时”类效果",
+      "prtsUrl": "https://prts.wiki/w/铃兰",
+      "pool": "standard"
+    },
+    {
+      "id": "贝洛内",
+      "officialName": "贝洛内",
+      "tier": 5,
+      "covenants": [
+        "叙拉古",
+        "突袭"
+      ],
+      "keyTraits": "作战能力：<战斗中>【叙拉古】【突袭】每叠加3层，本干员攻击力 +1%",
+      "eliteTraits": "<战斗中>【叙拉古】【突袭】每叠加3层，本干员攻击力 +2%",
+      "prtsUrl": "https://prts.wiki/w/贝洛内",
+      "pool": "standard"
+    },
+    {
+      "id": "维娜·维多利亚",
+      "officialName": "维娜·维多利亚",
+      "tier": 5,
+      "covenants": [
+        "维多利亚",
+        "奇迹"
+      ],
+      "keyTraits": "持续叠加：<休整期结束时>场上每有一名不同阶的【维多利亚】干员，使已激活的【维多利亚】【奇迹】层数 +2",
+      "eliteTraits": "<休整期结束时>场上每有一名不同阶的【维多利亚】干员，使已激活的【维多利亚】【奇迹】层数 +4",
+      "prtsUrl": "https://prts.wiki/w/维娜·维多利亚",
+      "pool": "standard"
+    },
+    {
+      "id": "迷迭香",
+      "officialName": "迷迭香",
+      "tier": 5,
+      "covenants": [
+        "精准",
+        "助力"
+      ],
+      "keyTraits": "持续叠加：<休整期结束时>使已激活的【精准】【助力】层数 +10",
+      "eliteTraits": "<休整期结束时>使已激活的【精准】【助力】层数 +20",
+      "prtsUrl": "https://prts.wiki/w/迷迭香",
+      "pool": "standard"
+    },
+    {
+      "id": "隐德来希",
+      "officialName": "隐德来希",
+      "tier": 5,
+      "covenants": [
+        "灵巧",
+        "不屈"
+      ],
+      "keyTraits": "作战能力：<战斗中>【灵巧】【不屈】每叠加3层，本干员攻击力 +1%",
+      "eliteTraits": "<战斗中>【灵巧】【不屈】每叠加3层，本干员攻击力 +2%",
+      "prtsUrl": "https://prts.wiki/w/隐德来希",
+      "pool": "standard"
+    },
+    {
+      "id": "塞雷娅",
+      "officialName": "塞雷娅",
+      "tier": 5,
+      "covenants": [
+        "坚守",
+        "协防干员"
+      ],
+      "keyTraits": "特异化：身前一格干员若为“休整期结束时”特质，本干员的特质与其相同",
+      "eliteTraits": null,
+      "prtsUrl": "https://prts.wiki/w/塞雷娅",
+      "pool": "standard"
+    },
+    {
+      "id": "溯光星源",
+      "officialName": "溯光星源",
+      "tier": 5,
+      "covenants": [
+        "奥术"
+      ],
+      "keyTraits": "持续叠加：<休整期结束时> 本回合每消耗3资金，使已激活的【奥术】层数 +2 （每回合至多叠加18层）",
+      "eliteTraits": "<休整期结束时> 本回合每消耗3资金，使已激活的【奥术】层数 +4 （每回合至多叠加36层）",
+      "prtsUrl": "https://prts.wiki/w/溯光星源",
+      "pool": "standard"
+    },
+    {
+      "id": "老鲤",
+      "officialName": "老鲤",
+      "tier": 5,
+      "covenants": [
+        "投资人",
+        "炎"
+      ],
+      "keyTraits": "作战能力：<战斗中>【炎】【投资人】每叠加3层，本干员攻击力 +1%",
+      "eliteTraits": "<战斗中>【炎】【投资人】每叠加3层，本干员攻击力 +2%",
+      "prtsUrl": "https://prts.wiki/w/老鲤",
+      "pool": "standard"
+    },
+    {
+      "id": "Mon3tr",
+      "officialName": "Mon3tr",
+      "tier": 5,
+      "covenants": [
+        "协防干员"
+      ],
+      "keyTraits": "持续叠加：<战斗中>周围八格干员每场战斗的叠层上限 +30%",
+      "eliteTraits": "<战斗中>周围八格干员每场战斗的叠层上限 +60%",
+      "prtsUrl": "https://prts.wiki/w/Mon3tr",
+      "pool": "standard"
+    },
+    {
+      "id": "可露希尔",
+      "officialName": "可露希尔",
+      "tier": 5,
+      "covenants": [
+        "投资人"
+      ],
+      "keyTraits": "持续叠加：<休整期结束时> 本回合每获得过一名干员，使已激活的【投资人】层数 +2 （每回合至多叠加16层）",
+      "eliteTraits": "<休整期结束时> 本回合每获得过一名干员，使已激活的【投资人】层数 +4 （每回合至多叠加32层）",
+      "prtsUrl": "https://prts.wiki/w/可露希尔",
+      "pool": "standard"
+    },
+    {
+      "id": "“暴躁铁皮”",
+      "officialName": "“暴躁铁皮”",
+      "tier": 5,
+      "covenants": [
+        "协防干员"
+      ],
+      "keyTraits": "作战能力：<战斗中>攻击力和生命上限+ 60%",
+      "eliteTraits": "<战斗中>攻击力和生命上限+ 120%",
+      "prtsUrl": "https://prts.wiki/w/“暴躁铁皮”",
+      "pool": "special",
+      "notes": "来自策略「森蚺 / 暴躁铁皮」，不是调度中心常规牌。协防干员。"
+    },
+    {
+      "id": "鸿雪",
+      "officialName": "鸿雪",
+      "tier": 5,
+      "covenants": [
+        "萨尔贡",
+        "精准"
+      ],
+      "keyTraits": "持续叠加：<战斗中>每次开启技能时使已激活的【萨尔贡】【精准】层数 +4 （每回合至多叠加16层）",
+      "eliteTraits": "<战斗中>每次开启技能时使已激活的【萨尔贡】【精准】层数 +8 （每回合至多叠加32层）",
+      "prtsUrl": "https://prts.wiki/w/鸿雪",
+      "pool": "standard"
+    },
+    {
+      "id": "焰尾",
+      "officialName": "焰尾",
+      "tier": 5,
+      "covenants": [
+        "卡西米尔",
+        "迅捷"
+      ],
+      "keyTraits": "持续叠加：<休整期结束时>整备区每有一名干员，使已激活的【卡西米尔】【迅捷】层数 +1",
+      "eliteTraits": "<休整期结束时>整备区每有一名干员，使已激活的【卡西米尔】【迅捷】层数 +2",
+      "prtsUrl": "https://prts.wiki/w/焰尾",
+      "pool": "standard"
+    },
+    {
+      "id": "冻河",
+      "officialName": "冻河",
+      "tier": 5,
+      "covenants": [
+        "乌萨斯",
+        "迅捷"
+      ],
+      "keyTraits": "持续叠加：<战斗中>攻击范围内每有一名敌人被击倒使已激活的【乌萨斯】【迅捷】层数 +1 （每场战斗至多叠加16层）",
+      "eliteTraits": "<战斗中>攻击范围内每有一名敌人被击倒使已激活的【乌萨斯】【迅捷】层数 +2 （每场战斗至多叠加32层）",
+      "prtsUrl": "https://prts.wiki/w/冻河",
+      "pool": "standard"
+    },
+    {
+      "id": "阿米娅",
+      "officialName": "阿米娅",
+      "tier": 5,
+      "covenants": [
+        "奇迹"
+      ],
+      "keyTraits": "持续叠加：<战斗中>身前一格干员提升盟约层数时，每次提升的层数额外 +1 （不受叠层上限影响）",
+      "eliteTraits": "<战斗中>身前一格干员提升盟约层数时，每次提升的层数额外 +2 （不受叠层上限影响）",
+      "prtsUrl": "https://prts.wiki/w/阿米娅",
+      "pool": "standard"
+    },
+    {
+      "id": "引星棘刺",
+      "officialName": "引星棘刺",
+      "tier": 6,
+      "covenants": [
+        "伊比利亚",
+        "迅捷"
+      ],
+      "keyTraits": "持续叠加：<休整期结束时>使已激活的【伊比利亚】【迅捷】层数 +12",
+      "eliteTraits": "<休整期结束时>使已激活的【伊比利亚】【迅捷】层数 +24",
+      "prtsUrl": "https://prts.wiki/w/引星棘刺",
+      "pool": "standard"
+    },
+    {
+      "id": "烛煌",
+      "officialName": "烛煌",
+      "tier": 6,
+      "covenants": [
+        "炎",
+        "维多利亚",
+        "迅捷"
+      ],
+      "keyTraits": "持续叠加：<战斗中>攻击范围内每有一名敌人触发元素损伤爆发使已激活的【炎】【维多利亚】层数 +1 （每回合至多叠加12层）",
+      "eliteTraits": "<战斗中>攻击范围内每有一名敌人触发元素损伤爆发使已激活的【炎】【维多利亚】层数 +2 （每回合至多叠加24层）",
+      "prtsUrl": "https://prts.wiki/w/烛煌",
+      "pool": "standard"
+    },
+    {
+      "id": "浊心斯卡蒂",
+      "officialName": "浊心斯卡蒂",
+      "tier": 6,
+      "covenants": [
+        "阿戈尔",
+        "聚合"
+      ],
+      "keyTraits": "持续叠加：<战斗中>攻击范围内每有一名我方干员部署使已激活的【阿戈尔】层数 +2 （每场战斗至多叠加20层）",
+      "eliteTraits": "<战斗中>攻击范围内每有一名我方干员部署使已激活的【阿戈尔】层数 +4 （每场战斗至多叠加40层）",
+      "prtsUrl": "https://prts.wiki/w/浊心斯卡蒂",
+      "pool": "standard"
+    },
+    {
+      "id": "克莱门莎",
+      "officialName": "克莱门莎",
+      "tier": 6,
+      "covenants": [
+        "阿戈尔"
+      ],
+      "keyTraits": "作战能力：<战斗开始时>【阿戈尔】盟约每叠加20层，使场上所有敌人侵蚀损伤冷却恢复速度 +1%",
+      "eliteTraits": "<战斗开始时>【阿戈尔】盟约每叠加10层，使场上所有敌人侵蚀损伤冷却恢复速度 +1%",
+      "prtsUrl": "https://prts.wiki/w/克莱门莎",
+      "pool": "standard"
+    },
+    {
+      "id": "耀骑士临光",
+      "officialName": "耀骑士临光",
+      "tier": 6,
+      "covenants": [
+        "卡西米尔",
+        "突袭"
+      ],
+      "keyTraits": "持续叠加：<战斗中>被击倒时召唤整备区最右侧的【卡西米尔】【突袭】干员上场，并使自身及被召唤干员已激活的盟约层数 +6 （每名干员每回合至多叠加12层）",
+      "eliteTraits": "<战斗中>被击倒时召唤整备区最右侧的【卡西米尔】【突袭】干员上场，并使自身及被召唤干员已激活的盟约层数 +12 （每名干员每回合至多叠加24层）",
+      "prtsUrl": "https://prts.wiki/w/耀骑士临光",
+      "pool": "standard"
+    },
+    {
+      "id": "荒芜拉普兰德",
+      "officialName": "荒芜拉普兰德",
+      "tier": 6,
+      "covenants": [
+        "叙拉古"
+      ],
+      "keyTraits": "持续叠加：<战斗中>每击倒一名敌人使已激活的【叙拉古】层数 +2 （每场战斗至多叠加20层） （晋升为精锐状态时，使所有【叙拉古】干员获得此效果）",
+      "eliteTraits": "<战斗中>所有【叙拉古】干员每击倒一名敌人使已激活的【叙拉古】层数 +4 （每场战斗至多叠加40层）",
+      "prtsUrl": "https://prts.wiki/w/荒芜拉普兰德",
+      "pool": "standard",
+      "alias": [
+        "异拉"
+      ]
+    },
+    {
+      "id": "酒神",
+      "officialName": "酒神",
+      "tier": 6,
+      "covenants": [
+        "维多利亚"
+      ],
+      "keyTraits": "整备能力：<进入休整期时>获得一件随机装备（不高于当前调度中心等级）",
+      "eliteTraits": "<进入休整期时>获得两件随机装备（不高于当前调度中心等级）",
+      "prtsUrl": "https://prts.wiki/w/酒神",
+      "pool": "standard"
+    },
+    {
+      "id": "逻各斯",
+      "officialName": "逻各斯",
+      "tier": 6,
+      "covenants": [
+        "奥术",
+        "远见"
+      ],
+      "keyTraits": "持续叠加：<获得时>【奥术】层数 +10，【远见】层数 +5 <战斗中>【奥术】【远见】每叠加3层，本干员攻击速度 +1 <获得时>【奥术】层数 +20，【远见】层数 +10 <战斗中>【奥术】【远见】每叠加3层，本干员攻击速度 +2",
+      "eliteTraits": null,
+      "prtsUrl": "https://prts.wiki/w/逻各斯",
+      "pool": "standard"
+    },
+    {
+      "id": "真言",
+      "officialName": "真言",
+      "tier": 6,
+      "covenants": [
+        "萨尔贡"
+      ],
+      "keyTraits": "作战能力：<战斗中>【萨尔贡】每叠加5层，本干员攻击力 +1%",
+      "eliteTraits": "<战斗中>【萨尔贡】每叠加5层，本干员攻击力 +2%",
+      "prtsUrl": "https://prts.wiki/w/真言",
+      "pool": "standard"
+    },
+    {
+      "id": "妮芙",
+      "officialName": "妮芙",
+      "tier": 6,
+      "covenants": [
+        "迅捷",
+        "远见"
+      ],
+      "keyTraits": "持续叠加：<战斗中>攻击范围内每有一名敌人陷入恐惧使已激活的【迅捷】层数 +4 （每回合至多叠加20层）",
+      "eliteTraits": "<战斗中>攻击范围内每有一名敌人陷入恐惧使已激活的【迅捷】层数 +8 （每回合至多叠加40层）",
+      "prtsUrl": "https://prts.wiki/w/妮芙",
+      "pool": "standard"
+    },
+    {
+      "id": "遥",
+      "officialName": "遥",
+      "tier": 6,
+      "covenants": [
+        "聚合",
+        "奇迹"
+      ],
+      "keyTraits": "持续叠加：<战斗中>攻击范围内每有一名敌人被击倒使已激活的【聚合】【奇迹】层数 +1 （每回合至多叠加12层）",
+      "eliteTraits": "<战斗中>攻击范围内每有一名敌人被击倒使已激活的【聚合】【奇迹】层数 +2 （每回合至多叠加24层）",
+      "prtsUrl": "https://prts.wiki/w/遥",
+      "pool": "standard"
+    },
+    {
+      "id": "魔王",
+      "officialName": "魔王",
+      "tier": 6,
+      "covenants": [
+        "调和"
+      ],
+      "keyTraits": "持续叠加：<休整期结束时>使已激活的核心盟约层数 +10",
+      "eliteTraits": "<休整期结束时>使已激活的核心盟约层数 +20",
+      "prtsUrl": "https://prts.wiki/w/魔王",
+      "pool": "standard",
+      "notes": "Ⅵ阶调和干员。勾选魔王后，2 名核心干员即可显示该核心已激活（仍须注意 6 人强化要求在场）。"
+    },
+    {
+      "id": "史尔特尔",
+      "officialName": "史尔特尔",
+      "tier": 6,
+      "covenants": [
+        "突袭",
+        "不屈"
+      ],
+      "keyTraits": "持续叠加：<战斗中>每击倒一名敌人使已激活的【突袭】【不屈】层数 +4 （每回合至多叠加16层）",
+      "eliteTraits": "<战斗中>每击倒一名敌人使已激活的【突袭】【不屈】层数 +8 （每回合至多叠加32层）",
+      "prtsUrl": "https://prts.wiki/w/史尔特尔",
+      "pool": "standard"
+    },
+    {
+      "id": "锏",
+      "officialName": "锏",
+      "tier": 6,
+      "covenants": [
+        "卡西米尔",
+        "谢拉格",
+        "莱塔尼亚"
+      ],
+      "keyTraits": "作战能力：<战斗中>【卡西米尔】【谢拉格】【莱塔尼亚】每叠加6层，本干员技力自然回复速度 +0.01 /秒，生命上限 +1%",
+      "eliteTraits": "<战斗中>【卡西米尔】【谢拉格】【莱塔尼亚】每叠加3层，本干员技力自然回复速度 +0.01 /秒，生命上限 +1%",
+      "prtsUrl": "https://prts.wiki/w/锏",
+      "pool": "standard"
+    },
+    {
+      "id": "机械师",
+      "officialName": "机械师",
+      "tier": 6,
+      "covenants": [
+        "协防干员",
+        "坚守"
+      ],
+      "keyTraits": "整备能力：<进入休整期时>若同一行至少有三名干员，获得一名当前人数最多盟约的干员",
+      "eliteTraits": "<进入休整期时>获得一名当前人数最多盟约的干员",
+      "prtsUrl": "https://prts.wiki/w/机械师",
+      "pool": "standard"
+    },
+    {
+      "id": "塔露拉",
+      "officialName": "塔露拉",
+      "tier": 6,
+      "covenants": [
+        "乌萨斯",
+        "奥术",
+        "协防干员"
+      ],
+      "keyTraits": "持续叠加：<战斗中>【乌萨斯】盟约获得强化：击倒单位时叠加的临时层数提升至4层；在场6名不同【乌萨斯】干员时，提升至6层",
+      "eliteTraits": "<战斗中>【乌萨斯】盟约获得强化：击倒单位时叠加的临时层数提升至6层；在场6名不同【乌萨斯】干员时，提升至8层",
+      "prtsUrl": "https://prts.wiki/w/塔露拉",
+      "pool": "standard"
+    },
+    {
+      "id": "夕",
+      "officialName": "夕",
+      "tier": 6,
+      "covenants": [
+        "炎",
+        "奥术"
+      ],
+      "keyTraits": "持续叠加：<休整期结束时> 本回合每获得过一名干员，使已激活的【炎】【奥术】层数 +2 （每回合至多叠加24层）",
+      "eliteTraits": "<休整期结束时> 本回合每获得过一名干员，使已激活的【炎】【奥术】层数 +4 （每回合至多叠加48层）",
+      "prtsUrl": "https://prts.wiki/w/夕",
+      "pool": "standard"
+    },
+    {
+      "id": "蕾缪安",
+      "officialName": "蕾缪安",
+      "tier": 6,
+      "covenants": [
+        "精准"
+      ],
+      "keyTraits": "作战能力：<战斗中>【精准】每叠加4层，本干员技力自然回复速度 +0.01 /秒",
+      "eliteTraits": "<战斗中>【精准】每叠加2层，本干员技力自然回复速度 +0.01 /秒",
+      "prtsUrl": "https://prts.wiki/w/蕾缪安",
+      "pool": "standard"
+    },
+    {
+      "id": "缪尔赛思",
+      "officialName": "缪尔赛思",
+      "tier": 6,
+      "covenants": [
+        "协防干员"
+      ],
+      "keyTraits": "整备能力：<获得时>获得一个“变形同构体”",
+      "eliteTraits": "<获得时>获得两个“变形同构体”",
+      "prtsUrl": "https://prts.wiki/w/缪尔赛思",
+      "pool": "standard"
+    },
+    {
+      "id": "帕拉斯",
+      "officialName": "帕拉斯",
+      "tier": 6,
+      "covenants": [
+        "灵巧",
+        "助力"
+      ],
+      "keyTraits": "持续叠加：<休整期结束时>使自身以及身前一格干员已激活的盟约层数+9",
+      "eliteTraits": "<休整期结束时>使自身以及身前一格干员已激活的盟约层数+18",
+      "prtsUrl": "https://prts.wiki/w/帕拉斯",
+      "pool": "standard"
+    }
+  ],
+  "equipment": [
+    {
+      "id": "M3茧甲",
+      "officialName": "M3茧甲",
+      "tier": 4,
+      "price": 2,
+      "category": "equipment",
+      "effects": {
+        "base": "战斗阶段被击倒时立刻复活（一场战斗仅1次）",
+        "upgraded": "战斗阶段被击倒时立刻复活（一场战斗仅2次）"
+      },
+      "prtsUrl": "https://prts.wiki/w/M3茧甲",
+      "alias": [
+        "M3",
+        "M3茬甲"
+      ],
+      "notes": "这是装备，不是干员。正式名是「茧甲」不是「茬甲」。乌萨斯社区路线将其与魔王并列推荐；魔王是调和干员，不要放进 equipment。"
+    },
+    {
+      "id": "维式重锤",
+      "officialName": "维式重锤",
+      "tier": 1,
+      "price": 1,
+      "category": "equipment",
+      "effects": {
+        "base": "攻击力+15%",
+        "upgraded": "攻击力+25%"
+      },
+      "prtsUrl": "https://prts.wiki/w/卫戍协议·规程/PRTS盟约记录#装备数据库",
+      "notes": "维多利亚相关基础装备。变形同构体对应维多利亚。"
+    },
+    {
+      "id": "加速维式重锤",
+      "officialName": "加速维式重锤",
+      "tier": 3,
+      "price": 2,
+      "category": "equipment",
+      "effects": {
+        "base": "攻击力+25%；攻击速度+30",
+        "upgraded": "攻击力+45%；攻击速度+30"
+      },
+      "prtsUrl": "https://prts.wiki/w/卫戍协议·规程/PRTS盟约记录#装备数据库",
+      "notes": "维多利亚哈洛德奥术路线一图流推荐给水灯心（社区推荐）。"
+    },
+    {
+      "id": "灼燃维式重锤",
+      "officialName": "灼燃维式重锤",
+      "tier": 4,
+      "price": 2,
+      "category": "equipment",
+      "effects": {
+        "base": "攻击力+30%；造成法术伤害时附带相当于10%伤害的灼燃损伤",
+        "upgraded": "攻击力+50%；造成法术伤害时附带相当于10%伤害的灼燃损伤"
+      },
+      "prtsUrl": "https://prts.wiki/w/卫戍协议·规程/PRTS盟约记录#装备数据库",
+      "notes": "维多利亚哈洛德奥术路线一图流推荐给水灯心、烛煌，并提到可给塔露拉提供攻击力与爆条（社区推荐）。"
+    },
+    {
+      "id": "乌萨斯呼吸器",
+      "officialName": "乌萨斯呼吸器",
+      "tier": 3,
+      "price": 2,
+      "category": "equipment",
+      "effects": {
+        "base": "阻挡数+1，攻击力+20%，每次再部署时上述加成效果叠加（最多叠加2次）",
+        "upgraded": "阻挡数+1，攻击力+30%，每次再部署时上述加成效果叠加（最多叠加3次）"
+      },
+      "prtsUrl": "https://prts.wiki/w/卫戍协议·规程/PRTS盟约记录#装备数据库",
+      "notes": "奥尔佳「获得时」特质会给予此装备。"
+    }
+  ],
+  "strategies": [
+    {
+      "id": "jessica-rally",
+      "operator": "杰西卡",
+      "name": "集结指示",
+      "initialHp": 22,
+      "text": "被动效果：在第4、7、10、13回合进入休整期时获得1个<寻呼模块>。<寻呼模块>：装备时销毁，在调度中心出现至多3名拥有该干员第一盟约的其他干员，免费获取其中1名（等阶不高于当前调度中心）。",
+      "unlock": "初始解锁",
+      "prtsUrl": "https://prts.wiki/w/卫戍协议·规程/PRTS盟约记录",
+      "notes": "乌萨斯社区更常推荐这条策略。"
+    },
+    {
+      "id": "gnosis-ursus",
+      "operator": "怒潮凛冬",
+      "name": "无惧风雪",
+      "initialHp": 26,
+      "text": "点击使用（消耗5）：获得1名【乌萨斯】干员（等阶不高于当前调度中心），每次购买【乌萨斯】干员时指令消耗资金-1，使用后指令重置并可再次使用。",
+      "unlock": "通关时的结算阵容中，包含6名【乌萨斯】干员解锁",
+      "prtsUrl": "https://prts.wiki/w/卫戍协议·规程/PRTS盟约记录",
+      "notes": "乌萨斯社区认为可用，但可能刷出不想要的牌。"
+    },
+    {
+      "id": "harold-box",
+      "operator": "哈洛德",
+      "name": "人才盲盒",
+      "initialHp": 23,
+      "text": "被动效果：从第4回合开始每2回合获得1名【维多利亚】干员（等阶不高于当前调度中心）。",
+      "unlock": "通关时的结算阵容中，包含6名【维多利亚】干员解锁",
+      "prtsUrl": "https://prts.wiki/w/卫戍协议·规程/PRTS盟约记录",
+      "notes": "维多利亚哈洛德奥术路线建议保底使用。一图流提醒：前期调度中心等级较低时很大概率会发哈洛德自己，盟约层数低时比较没用，无需激活时可酌情出售。"
+    },
+    {
+      "id": "penal-tycoon",
+      "operator": "裁度",
+      "name": "量体裁衣",
+      "initialHp": 26,
+      "text": "被动效果：每回合首次主动刷新后获得1资金。<在场6名不同【叙拉古】干员>效果替换为【叙拉古】干员部署后进入隐匿状态，在隐匿状态和脱离隐匿10秒内对敌人攻击时有概率造成真实伤害并恐惧目标。",
+      "unlock": "累计获得50名【叙拉古】干员解锁",
+      "prtsUrl": "https://prts.wiki/w/卫戍协议·规程/PRTS盟约记录",
+      "notes": "叙拉古社区路线要求每回合至少用该策略刷新一次商店。"
+    },
+    {
+      "id": "chiave-gang",
+      "operator": "贾维",
+      "name": "团伙行动",
+      "initialHp": 24,
+      "text": "被动效果：每回合内主动刷新4次调度中心后，获得1名【叙拉古】干员（等阶不高于当前调度中心），每回合至多触发1次。",
+      "unlock": "通关时的结算阵容中，包含6名【叙拉古】干员解锁",
+      "prtsUrl": "https://prts.wiki/w/卫戍协议·规程/PRTS盟约记录"
+    }
+  ],
+  "comps": [
+    {
+      "covenantId": "ursus",
+      "name": "乌萨斯",
+      "completeness": "完整",
+      "targetBoard": "6乌萨斯 / 2奥术 / 2迅捷",
+      "targetBoardNotes": "这是社区成型目标，不是官方门槛。6 乌萨斯强化必须「在场」6 名不同乌萨斯，不能按仅已拥有计算。2 奥术只激活附加法伤，不会触发 3 奥术的减抗和破隐。若有魔王等调和，2 名乌萨斯即可激活核心。",
+      "priority": {
+        "early": [
+          {
+            "operators": [
+              "折桠",
+              "烈夏",
+              "乌啾"
+            ],
+            "role": "先激活 3 乌萨斯。折桠、乌啾可将临时层转为固定层。"
+          },
+          {
+            "operators": [
+              "真理"
+            ],
+            "role": "购买价格为 1，低价凑人数，之后可卖掉，也可三合一。"
+          }
+        ],
+        "mid": [
+          {
+            "operators": [
+              "维伊",
+              "卡达"
+            ],
+            "role": "激活奥术；维伊本身也是乌萨斯。"
+          },
+          {
+            "operators": [
+              "波登可",
+              "青枳"
+            ],
+            "role": "激活迅捷。波登可还可与乌啾凑 2 聚合；青枳给身后干员叠层。"
+          },
+          {
+            "operators": [
+              "冻河"
+            ],
+            "role": "叠层核心。社区建议争取第 10 回合前拿到。"
+          },
+          {
+            "operators": [
+              "阿米娅",
+              "怒潮凛冬"
+            ],
+            "role": "阿米娅可提高冻河叠层，并与怒潮凛冬凑 2 奇迹。怒潮凛冬也可使用，但可能刷出不想要的牌。"
+          },
+          {
+            "operators": [
+              "霍尔海雅"
+            ],
+            "role": "后期用霍尔海雅（带 1 技能，开技能叠奥术）换掉卡达。"
+          },
+          {
+            "operators": [
+              "渡桥",
+              "空弦"
+            ],
+            "role": "电玩帮补充：也能给队友叠层，两人还能叠远见获得资金。此条仅见于电玩帮，925G 未写。"
+          }
+        ],
+        "late": [
+          {
+            "operators": [
+              "塔露拉"
+            ],
+            "role": "乌萨斯 + 奥术 + 协防干员，输出核心，拿到即成型。"
+          }
+        ],
+        "avoid": [
+          {
+            "operators": [
+              "赫拉格"
+            ],
+            "role": "社区认为这套吃不到红利，理想情况不拿；缺乌萨斯人数时再当过渡。"
+          }
+        ],
+        "items": [
+          {
+            "name": "魔王",
+            "kind": "operator",
+            "role": "调和：核心激活人数+1，相当于少占一个乌萨斯位；休整期结束时还为已激活核心叠层。社区：碰到就拿。"
+          },
+          {
+            "name": "M3茧甲",
+            "kind": "equipment",
+            "role": "被击倒后立刻复活。社区与魔王并列的好用巧物。"
+          }
+        ]
+      },
+      "strategies": [
+        "杰西卡（集结指示）优先；怒潮凛冬（无惧风雪）可用，但电玩帮认为可能刷出不想要的牌。全盟约一图流策略位写的是怒潮凛冬，与现用的杰西卡不同，两条都可写，不要写成唯一解。"
+      ],
+      "communityCoreIdea": "冻河叠层，塔露拉吃层输出。围绕乌萨斯、奥术、迅捷叠厚。",
+      "sources": [
+        {
+          "title": "电玩帮：顶级轮椅 乌萨斯 运营思路",
+          "url": "https://www.vgover.com/news/244979",
+          "date": "2026-11-09",
+          "note": "全文已读，可独立成篇。社区推荐，不是官方结论。"
+        },
+        {
+          "title": "925G：卫戍协议乌萨斯该怎么运营（未能核对）",
+          "url": "https://m.925g.com/gonglue/325204.html",
+          "date": "2026-11-14",
+          "note": "预定交叉源。本次检索多次失败（WebFetch 504，curl 无法连接），未能核对，不能当作已读来源，也不再作为交叉验证依据。"
+        },
+        {
+          "title": "白樱iridescent：乌萨斯一图流",
+          "url": "https://www.bilibili.com/video/BV1CwWW6aEjh/",
+          "date": "2026-11-09",
+          "note": "已抽帧读图。目标同为 6 乌萨斯 / 2 奥术 / 2 迅捷，前中期折桠 / 烈夏 / 乌啾、四本冻河、大成 6 乌萨斯，可与电玩帮交叉。925G 仍不算已读，不能当交叉源。不因此改抓取表。社区推荐，不是官方结论。"
+        }
+      ],
+      "officialPool": [
+        "折桠",
+        "烈夏",
+        "真理",
+        "乌啾",
+        "奥尔佳",
+        "赫拉格",
+        "维伊",
+        "怒潮凛冬",
+        "冻河",
+        "塔露拉"
+      ],
+      "recommended": true
+    },
+    {
+      "covenantId": "siracusa",
+      "name": "叙拉古",
+      "completeness": "单源待补充",
+      "targetBoard": "6 叙拉古，并激活奇迹；优先再激活精准。一图流还标了协防干员、绝技、突袭、不屈、聚合、奥术等方向，随实际上场而变，不以 6/2/2 单套写死。",
+      "targetBoardNotes": "以刷新叠【叙拉古】【奇迹】。奇迹可由整备区的复奏维持。6 人强化必须在场。适用范围：只要没禁用叙拉古都可以用；最终隐藏 BOSS 若召唤飞天炸人装置，6 叙拉古的隐匿效果也非常有利（对应策略「裁度」在 6 叙拉古时的替换效果）。社区推荐，不是官方结论。",
+      "priority": {
+        "early": [
+          {
+            "operators": [
+              "拉普兰德"
+            ],
+            "role": "从头到尾见到就买。"
+          },
+          {
+            "operators": [
+              "复奏",
+              "云迹"
+            ],
+            "role": "1～3 回合出复奏后可凑云迹，激活奇迹，便于免费刷新叠层。"
+          }
+        ],
+        "mid": [
+          {
+            "operators": [
+              "奥斯塔",
+              "伺夜",
+              "忍冬"
+            ],
+            "role": "4～6 回合逐步凑齐。站位：忍冬在前、伺夜跟在后面、之后拉普兰德。治疗可以先抓哈洛德过渡。"
+          },
+          {
+            "operators": [
+              "安洁莉娜"
+            ],
+            "role": "7～10 回合凑普通安洁莉娜（文中「洁哥」），卖掉云迹。"
+          },
+          {
+            "operators": [
+              "复奏"
+            ],
+            "role": "卖掉云迹后不要卖掉复奏，留在整备区仍可激活奇迹；靠每回合多次刷新商店叠层。"
+          },
+          {
+            "operators": [
+              "斥罪"
+            ],
+            "role": "站前面。"
+          },
+          {
+            "operators": [
+              "夜莺"
+            ],
+            "role": "治疗最好抓夜莺，能辅助叠层。"
+          },
+          {
+            "operators": [
+              "空弦",
+              "渡桥"
+            ],
+            "role": "盟约外通用叠层；最好空弦和伺夜激活精准。"
+          }
+        ],
+        "late": [
+          {
+            "operators": [
+              "荒芜拉普兰德"
+            ],
+            "role": "11～13 回合尽量刷出以换掉场上复奏（复奏仍留整备区）。异拉大概率是合成出来的，尽最大可能做成精锐，叠层很快。输出向饰品尽量给异拉和贝洛内。"
+          },
+          {
+            "operators": [
+              "贝洛内"
+            ],
+            "role": "可以换掉忍冬或普通拉普兰德。"
+          },
+          {
+            "operators": [
+              "蕾缪安"
+            ],
+            "role": "最终见 BOSS 前，若精准层数高，可以把盟约外的空弦换成蕾缪安等输出更高的干员。"
+          }
+        ],
+        "avoid": [],
+        "items": []
+      },
+      "strategies": [
+        "每回合都至少用裁度（官方策略「量体裁衣」）的策略能力刷新一次商店。6 叙拉古时效果替换为部署后进入隐匿，并在隐匿及脱离隐匿 10 秒内攻击有概率造成真实伤害并恐惧。一图流备选策略栏写「暂无备选策略」。"
+      ],
+      "sources": [
+        {
+          "title": "TapTap 逻辑元：叙拉古高层运营思路",
+          "url": "https://www.taptap.cn/moment/870577795913220662",
+          "date": "2026-11-14",
+          "note": "文字正文。文中指向森空岛一图流与 B 站视频。社区推荐，不是官方结论。"
+        },
+        {
+          "title": "森空岛配队工具一图流截图",
+          "url": "https://game.skland.com/arknights/stronghold-guide/detail?guideId=2121255841656861822",
+          "date": "2026-11-13",
+          "note": "图内发布时间 2026-11-13 22:52:28，作者栏「小猫踩奶引发全球震动」，与 TapTap 文字一致。原页为前端应用，未能直接抽取正文，内容以该截图为准。与 TapTap、B 站为同一条思路的多平台分发，作者栏昵称不同也不算交叉源。完备度作「单源待补充」，还待交叉验证。"
+        },
+        {
+          "title": "B 站：轻松800层！小刻都能学会的叙拉古运营思路（未观看）",
+          "url": "https://www.bilibili.com/video/BV1MQW16BE9s/",
+          "date": "2026-11-11",
+          "note": "对应视频。未观看，不用口播补未在图文中出现的步骤。"
+        },
+        {
+          "title": "泰拉生鲜研究所：全盟约打法叠层一图流（叙拉古行，未作本条覆盖）",
+          "url": "https://www.bilibili.com/video/BV14aWd6wEYJ/",
+          "date": "2026-11-12",
+          "note": "已抽帧读图。该行附加方向是迅捷 + 精准，与已入库的逻辑元（奇迹 + 精准）不是同一条，不要覆盖本配方。"
+        }
+      ],
+      "officialPool": [
+        "拉普兰德",
+        "奥斯塔",
+        "复奏",
+        "忍冬",
+        "伺夜",
+        "斥罪",
+        "安洁莉娜",
+        "贝洛内",
+        "铃兰",
+        "荒芜拉普兰德"
+      ],
+      "recommended": true,
+      "communityCoreIdea": "前期用复奏 + 云迹打开奇迹，中后期用安洁莉娜吃刷新叠层，输出核心为精锐荒芜拉普兰德与贝洛内，并用空弦 / 伺夜打开精准。",
+      "recommendedAdditional": [
+        "奇迹",
+        "精准"
+      ],
+      "recommendedAdditionalNotes": "一图流成型阵容还标了协防干员、绝技、突袭、不屈、聚合、奥术等附加方向，随实际上场而变，不要写成固定 6/2/2。",
+      "gap": "TapTap、森空岛与 B 站是同一条思路的多平台分发，不能算交叉源；B 站视频未观看。页面可展示配方，还待交叉验证。 全盟约一图流的叙拉古行是迅捷 + 精准，与本条逻辑元（奇迹 + 精准）不是同一条，未作为另一条配方覆盖入库，缺独立抓取表前不编造。"
+    },
+    {
+      "covenantId": "victoria",
+      "name": "维多利亚",
+      "completeness": "单源待补充",
+      "targetBoard": "6 维多利亚为强化目标；附加至少开奥术，并搭配奇迹 / 独行 / 绝技。奥术先 2 人激活，3 人才减抗；独行只能保留 1 人。",
+      "targetBoardNotes": "一图流强调维多利亚是装备导向核心，叠层核心在四、五阶，建议快速升级调度中心。须给维多利亚干员带装备，否则吃不到激活效果。6 人强化必须在场。原文未写成固定的 6/2/2 人数。作者将本路线定为霍尔海雅被禁时的保底。",
+      "priority": {
+        "early": [
+          {
+            "operators": [
+              "水灯心",
+              "Miss.Christine"
+            ],
+            "role": "适用于前期抽到这两人的节奏。前中期优先抓取；Miss.Christine 前期尽量多上场，可以帮助叠加核心盟约。"
+          },
+          {
+            "operators": [
+              "溯光星源"
+            ],
+            "role": "有机会就抓，帮助叠加奥术。"
+          },
+          {
+            "operators": [
+              "哈洛德"
+            ],
+            "role": "策略「人才盲盒」保底用。前期等级低时很大概率会发自己，层数低时比较没用，无需激活盟约时可酌情出售。"
+          }
+        ],
+        "mid": [
+          {
+            "operators": [
+              "涤火杰西卡",
+              "白铁"
+            ],
+            "role": "中期优先。白铁特质可将装备进阶。激活维多利亚后开始叠层。"
+          },
+          {
+            "operators": [
+              "凯瑟琳"
+            ],
+            "role": "抽不到白铁也不要放过凯瑟琳（一图流写作「凯特琳」，按获得装备、帮杰西卡叠层的上下文校正为凯瑟琳）：购买至少获取一件装备，帮助杰西卡叠层。"
+          },
+          {
+            "operators": [
+              "阿米娅"
+            ],
+            "role": "中期可选，放在杰西卡身后协助叠层。"
+          },
+          {
+            "operators": [
+              "酒神"
+            ],
+            "role": "面对高抗性怪海，中期推荐抓来过渡、保证生命值。"
+          },
+          {
+            "operators": [
+              "维伊"
+            ],
+            "role": "奥术层数叠加后，中期可作输出，后期再换成塔露拉。"
+          },
+          {
+            "operators": [
+              "号角"
+            ],
+            "role": "面对隐匿怪，买一个号角作破隐针对。号角为物资调配处自选建议，建议放在五阶位置，避免拿不到功能性卡。"
+          }
+        ],
+        "late": [
+          {
+            "operators": [
+              "维娜·维多利亚"
+            ],
+            "role": "中后期优先，用于叠层，也可作为主力输出。"
+          },
+          {
+            "operators": [
+              "烛煌"
+            ],
+            "role": "主力输出；优先装备灼燃维式重锤。注意酒神和烛煌元素爆条有冲突，需要取舍。"
+          },
+          {
+            "operators": [
+              "塔露拉"
+            ],
+            "role": "后期换下维伊。灼燃维式重锤可提供攻击力和爆条，帮助清图。"
+          }
+        ],
+        "avoid": [
+          {
+            "operators": [
+              "死芒",
+              "焰影苇草"
+            ],
+            "role": "攻略正文明确：这个版本都不属于维多利亚，注意甄别。二者不在本期维多利亚官方池中。"
+          }
+        ],
+        "items": [
+          {
+            "name": "加速维式重锤",
+            "kind": "equipment",
+            "role": "水灯心有条件推荐携带，前期可快速处理怪海和中等抗性敌人。"
+          },
+          {
+            "name": "灼燃维式重锤",
+            "kind": "equipment",
+            "role": "水灯心、烛煌优先；也可给塔露拉提供攻击力与爆条。"
+          }
+        ]
+      },
+      "strategies": [
+        "哈洛德（人才盲盒）建议保底使用。"
+      ],
+      "selfSelectNotes": "物资调配处可将风笛、琴柳、号角、澄闪加入队伍；号角建议放在五阶位置，防止拿不到功能性卡。面对隐匿敌人，一图流建议买一个号角作破隐针对。自选干员的实际盟约会按其势力分配，须以进局后游戏内显示为准。",
+      "recommendedAdditional": [
+        "奥术",
+        "独行",
+        "奇迹",
+        "绝技"
+      ],
+      "recommendedAdditionalNotes": "来自一图流顶部图标识别：除核心维多利亚外，还标了奥术、独行、奇迹、绝技。独行必须恰好在场 1 人才生效（水灯心是独行）。",
+      "sources": [
+        {
+          "title": "TapTap：哈洛德奥术运营（正文）",
+          "url": "https://www.taptap.cn/moment/868630877297446716",
+          "date": "2026-11-08",
+          "note": "梦弈笑，可见修改至 2026-11-09。社区推荐，默认推荐路线。不是官方结论。"
+        },
+        {
+          "title": "同一篇附图一图流（第二张图含完整运营文字）",
+          "url": "https://www.taptap.cn/moment/868630877297446716",
+          "date": "2026-11-09",
+          "note": "与正文是同一篇的附图，不能算独立交叉源。个别短词（如凯特琳→凯瑟琳、克里斯汀→Miss.Christine）已对照 PRTS 校正。一图流底部带森空岛配队工具字样，但对应原页未能抽取独立正文。完备度作「单源待补充」，还待交叉验证。不要和「变形者维多利亚」混成一套默认板面。"
+        }
+      ],
+      "officialPool": [
+        "慕斯",
+        "Miss.Christine",
+        "哈洛德",
+        "水灯心",
+        "凯瑟琳",
+        "涤火杰西卡",
+        "白铁",
+        "维娜·维多利亚",
+        "烛煌",
+        "酒神"
+      ],
+      "routeId": "victoria-harold-arts",
+      "routeName": "哈洛德奥术运营",
+      "recommended": true,
+      "gap": "正文和附图出自同一篇，不能算交叉源。页面可展示配方并保留推荐保底，还待交叉验证。"
+    },
+    {
+      "covenantId": "victoria",
+      "routeId": "victoria-shapeshifter",
+      "routeName": "变形者维多利亚",
+      "name": "维多利亚",
+      "recommended": false,
+      "completeness": "单源待补充",
+      "targetBoard": "维多利亚 + 灵巧、坚守、远见、独行、绝技。利用变形者把其他阵营角色转成维多利亚来叠层。",
+      "targetBoardNotes": "一图流底部图标列出灵巧、坚守、远见、独行、绝技。凯瑟琳、杰西卡到手越晚，叠层越容易卡住。若精准线的霍尔海雅被禁用，作者建议不要走这套，改走哈洛德奥术运营保底。6 人强化必须在场。",
+      "priority": {
+        "early": [
+          {
+            "operators": [
+              "罗比菈塔"
+            ],
+            "role": "前期坚守：罗比菈塔 + 任意坚守。坚守层数上来可减少不必要翻车。"
+          },
+          {
+            "operators": [
+              "云迹"
+            ],
+            "role": "建议第一批转职成维多利亚，转职后继续帮叠核心；有机会再补空弦协助叠层，前期清杂也不错。"
+          },
+          {
+            "operators": [
+              "卡达",
+              "Miss.Christine"
+            ],
+            "role": "先用这两人激活奥术，四级店再直接抓霍尔海雅。"
+          }
+        ],
+        "mid": [
+          {
+            "operators": [
+              "涤火杰西卡",
+              "塞雷娅"
+            ],
+            "role": "尽快升到四级调度中心拿叠层核心杰西卡；塞雷娅吃前期坚守加成，同时叠坚守和核心。前期不要在低级店停留过久，作者甚至建议前期可亏血量抢升四级，避免被卡层数。"
+          },
+          {
+            "operators": [
+              "霍尔海雅"
+            ],
+            "role": "四级店直接抓。转职后可同时加速核心、奥术、精准。霍尔海雅被禁用时不要走本路线。"
+          },
+          {
+            "operators": [
+              "凯瑟琳",
+              "白铁"
+            ],
+            "role": "凯瑟琳固定出装备给杰西卡叠层；白铁把低阶装备打成进阶，并协助进阶维式重锤。白铁 3 技能配合灵巧叠起来的远程，中期伤害不俗。"
+          },
+          {
+            "operators": [
+              "空弦"
+            ],
+            "role": "有机会再补，协助叠层。"
+          },
+          {
+            "operators": [
+              "机械师"
+            ],
+            "role": "过渡，帮助拿维多利亚或利用坚守。"
+          }
+        ],
+        "late": [],
+        "avoid": [
+          {
+            "operators": [
+              "死芒",
+              "焰影苇草"
+            ],
+            "role": "本期不属于维多利亚，自选和认人时要排除。"
+          },
+          {
+            "operators": [
+              "风笛",
+              "琴柳"
+            ],
+            "role": "功能上不推荐作为自选。"
+          }
+        ],
+        "items": [
+          {
+            "name": "灼燃维式重锤",
+            "kind": "equipment",
+            "role": "转职高阶塔露拉时可配合灼燃锤和奥术，伤害不俗。"
+          }
+        ]
+      },
+      "strategies": [
+        "策略用「变形者集群」。",
+        "若精准线的霍尔海雅被禁用，不要走这套，改哈洛德奥术运营保底。"
+      ],
+      "selfSelectNotes": "阵营不是非带不可。功能上不推荐风笛、琴柳；澄闪可转高阶奥术或精准，功能有限；号角是破防，但相对杰西卡模组自带破防，功能性也有限；转职高阶塔露拉配合灼燃锤和奥术，伤害不俗。死芒、焰影苇草本期不是维多利亚。自选干员的实际盟约以进局后游戏内显示为准。",
+      "exampleBoard": [
+        "水灯心",
+        "哈洛德",
+        "涤火杰西卡",
+        "澄闪",
+        "华法琳",
+        "塞雷娅",
+        "凯瑟琳",
+        "白铁",
+        "云迹",
+        "空弦"
+      ],
+      "exampleBoardNotes": "一图流列出的成型角色对照名单，不是强制 10 人固定阵容。澄闪等自选干员不在本期预设池，盟约以进局显示为准。",
+      "recommendedAdditional": [
+        "灵巧",
+        "坚守",
+        "远见",
+        "独行",
+        "绝技"
+      ],
+      "recommendedAdditionalNotes": "来自一图流底部图标。独行只能保留 1 人。",
+      "sources": [
+        {
+          "title": "TapTap：变形者维多利亚详解",
+          "url": "https://www.taptap.cn/moment/869886771695980263",
+          "date": "2026-11-12",
+          "note": "与哈洛德奥术运营同一作者（梦弈笑）的第二条完整路线，已按策划调研读图核对。单源，待补充交叉验证。不要和哈洛德路线混成一套默认板面。"
+        }
+      ],
+      "officialPool": [
+        "慕斯",
+        "Miss.Christine",
+        "哈洛德",
+        "水灯心",
+        "凯瑟琳",
+        "涤火杰西卡",
+        "白铁",
+        "维娜·维多利亚",
+        "烛煌",
+        "酒神"
+      ]
+    },
+    {
+      "covenantId": "yan",
+      "routeId": "yan-duyaoye",
+      "routeName": "杜遥夜 3 炎 / 2 灵巧 / 2 聚合",
+      "name": "炎",
+      "completeness": "单源待补充",
+      "recommended": true,
+      "targetBoard": "3 炎 / 2 灵巧 / 2 聚合；投资人顺手拿。不必强求 6 炎，卡 4～5 本即可。",
+      "targetBoardNotes": "以杜遥夜分队教学简介为准，不必强求本家 6 炎。余、仇白是中期核心。全盟约一图流「大炎」行（6 炎 / 灵巧 / 聚合，策略望，主 C 烛煌）只作对照，不要和本条合成默认板。与久痴梦简介对华法琳态度相反，不要合并。社区推荐，单源待补充，不是官方结论。",
+      "priority": {
+        "early": [
+          {
+            "operators": [],
+            "role": "目标是先开 3 炎与 2 灵巧，聚合 2 保生存；投资人顺手拿。不必强求 6 炎，卡 4～5 本即可。"
+          }
+        ],
+        "mid": [
+          {
+            "operators": [
+              "余",
+              "仇白"
+            ],
+            "role": "中期核心，强度极高；仇白中后期买牌叠灵巧效率高。"
+          },
+          {
+            "operators": [],
+            "role": "生存与增伤可走 3 坚守、2 聚合，聚合奶住。"
+          }
+        ],
+        "late": [
+          {
+            "operators": [
+              "余",
+              "仇白",
+              "风絮"
+            ],
+            "role": "Boss 理想板按简介原文：余 + 仇白 + ff0 + 风絮 + 坚守×2 + 火陈×2。其中「ff0」「火陈」保留原文，正式名待核，不指定为其他干员。"
+          }
+        ],
+        "avoid": [],
+        "items": [
+          {
+            "name": "火陈（社区称呼，正式名待核）",
+            "kind": "unconfirmed",
+            "role": "简介写五本挂火陈，可双火陈；数值高，随便吃加成；装备优先狙击镜类增伤。保留原文，不指定正式名。"
+          },
+          {
+            "name": "ff0（原文保留，含义待核）",
+            "kind": "unconfirmed",
+            "role": "出现在 Boss 理想板「余 + 仇白 + ff0 + 风絮 + 坚守×2 + 火陈×2」。含义待核，不臆造其他干员名。"
+          }
+        ]
+      },
+      "strategies": [
+        "杜遥夜「广交豪杰」是本期有完整文字说明的炎向策略。全盟约「大炎」行策略位写望、主 C 烛煌，只作对照，不要和本条合成；望与杜遥夜策略何时二选一仍待核。"
+      ],
+      "recommendedAdditional": [
+        "灵巧",
+        "聚合"
+      ],
+      "recommendedAdditionalNotes": "投资人顺手拿。全盟约「大炎」对照行是 6 炎 / 灵巧 / 聚合，不要写进本条默认人数。",
+      "communityCoreIdea": "3 炎 / 2 灵巧 / 2 聚合，不必强求 6 炎；余、仇白是中期核心。",
+      "gap": "单源待补充。Boss 板「ff0」是否即火陈模组用语待核；望策略与杜遥夜策略何时二选一待核；稳定的 6 炎 / 2 奥术元素条路线未入库。龙哥哥 BV1t8Wd6eE8W 只确认大炎可玩，未当完整抓取表。",
+      "sources": [
+        {
+          "title": "PRTS 盟约记录",
+          "url": "https://prts.wiki/w/卫戍协议·规程/PRTS盟约记录",
+          "date": "2026-11-17",
+          "note": "官方效果与干员池唯一数值口径。"
+        },
+        {
+          "title": "杜遥夜：中期强力 下限稳定 分队教学",
+          "url": "https://www.bilibili.com/video/BV1vRWG64E8c/",
+          "date": "2026-11-11",
+          "note": "简介写清 3 炎 / 2 灵巧 / 2 聚合与抓取要点，已核对。社区推荐，单源待补充，不是官方结论。"
+        },
+        {
+          "title": "泰拉生鲜研究所：全盟约打法叠层一图流（大炎行，只作对照）",
+          "url": "https://www.bilibili.com/video/BV14aWd6wEYJ/",
+          "date": "2026-11-12",
+          "note": "已抽帧读图。该行是 6 炎 / 灵巧 / 聚合，策略望，主 C 烛煌 / 火陈，只作对照，不与杜遥夜线合成，也不覆盖久痴梦简介。"
+        }
+      ],
+      "officialPool": [
+        "拜松",
+        "矩",
+        "风絮",
+        "乌有",
+        "余",
+        "仇白",
+        "黍",
+        "老鲤",
+        "烛煌",
+        "夕"
+      ]
+    },
+    {
+      "covenantId": "yan",
+      "name": "炎",
+      "completeness": "单源待补充",
+      "targetBoard": null,
+      "targetBoardNotes": "文字来源未写死「6 炎 / x 灵巧 / x 聚合」的最终人数，入库不写死目标人数。可见思路是：炎为核心，用灵巧、聚合干员给仇白等输出叠层，余是道中主力。社区推荐，单源待补充，不是官方结论。",
+      "priority": {
+        "early": [
+          {
+            "operators": [],
+            "role": "能升本就升本。调度中心升级优先于死磕某张牌；原文未点名具体低阶炎。"
+          },
+          {
+            "operators": [
+              "风絮",
+              "华法琳",
+              "云迹",
+              "仇白",
+              "余",
+              "罗比菈塔"
+            ],
+            "role": "原文「关键牌」；其余两个位置有什么带什么。"
+          }
+        ],
+        "mid": [
+          {
+            "operators": [
+              "仇白"
+            ],
+            "role": "输出与叠层。社区建议带 1 技能。华法琳（可再加阿米娅）对着仇白叠层。"
+          },
+          {
+            "operators": [
+              "余"
+            ],
+            "role": "道中主力，社区建议带 2 技能；能守线、自己爆条、叠层。另有一条独立补白也强调「余带二技能非常非常重要」，不能单独构成配方。"
+          },
+          {
+            "operators": [
+              "华法琳",
+              "阿米娅"
+            ],
+            "role": "对着仇白叠层。"
+          }
+        ],
+        "late": [],
+        "avoid": [],
+        "items": [
+          {
+            "name": "m3 二技能（待确认）",
+            "kind": "unconfirmed",
+            "role": "原文：放在旁边「可以增加上限」。身份有歧义，与 Ⅴ 阶干员 Mon3tr 的特质（周围八格干员每场战斗叠层上限 +30% / +60%）更接近，也可能被写成装备 M3茧甲。存疑，不按装备或干员单方面坐实。"
+          }
+        ]
+      },
+      "strategies": [
+        "本期文字源未指定开局策略。上赛季「杜遥夜叠炎」仍不可套用。本期另有杜遥夜「3 炎 / 2 灵巧 / 2 聚合」路线，已分条存放；两条对华法琳态度相反，不要合成一套板面。"
+      ],
+      "sources": [
+        {
+          "title": "PRTS 盟约记录",
+          "url": "https://prts.wiki/w/卫戍协议·规程/PRTS盟约记录",
+          "date": "2026-11-17",
+          "note": "官方效果与干员池唯一数值口径。"
+        },
+        {
+          "title": "久痴梦：聚合灵巧炎基础思路教学（仅用简介，未观看视频）",
+          "url": "https://www.bilibili.com/video/BV1fBsG6wEcd/",
+          "date": "2026-11-14",
+          "note": "较完整的文字思路仅此一条视频简介。单源，待补充。社区推荐，不是官方结论。"
+        },
+        {
+          "title": "点点滴滴路：轻松稳定八百层炎（仅用简介一句）",
+          "url": "https://www.bilibili.com/video/BV1qzsG6hEhb/",
+          "date": "2026-11-14",
+          "note": "简介只强调「余带二技能非常非常重要」，与上条技能建议一致；不能单独构成配方。"
+        }
+      ],
+      "officialPool": [
+        "拜松",
+        "矩",
+        "风絮",
+        "乌有",
+        "余",
+        "仇白",
+        "黍",
+        "老鲤",
+        "烛煌",
+        "夕"
+      ],
+      "gap": "完整抓取顺序仅一条简介；未观看视频。目标人数未写死。柏喙攻略组 BV1CVsP6jEac（2026-11-16）简介无可使用抓取正文，未引用为配方。「m3 二技能」身份存疑。与杜遥夜线对华法琳态度相反，不要合并。",
+      "communityCoreIdea": "炎为核心，用灵巧、聚合给仇白等输出叠层，余是道中主力。能升本就升本，不要死磕某张低阶牌。",
+      "recommendedAdditional": [
+        "灵巧",
+        "聚合"
+      ],
+      "recommendedAdditionalNotes": "云迹兼奇迹；罗比菈塔、余兼坚守 / 助力。不要据此写死附加盟约人数。",
+      "routeId": "yan-jiuchi",
+      "routeName": "久痴梦简介（聚合灵巧炎）",
+      "recommended": false
+    },
+    {
+      "covenantId": "sargon",
+      "name": "萨尔贡",
+      "completeness": "单源待补充",
+      "recommended": true,
+      "targetBoard": "6 萨尔贡 / 2 迅捷 / 2 精准",
+      "targetBoardNotes": "来自全盟约一图流「萨尔贡」行。叠层逻辑：前期靠开技能叠层，后期靠沉睡 / 眩晕叠层。6 人强化必须在场。缺完整回合长文，单源待补充，不是官方结论。晓杰 425 长教程本次未完整听写口播，不把口播顺序写成抓取表。禁止套用 2026 年 3 月旧攻略。",
+      "priority": {
+        "early": [
+          {
+            "operators": [
+              "艾丝黛尔",
+              "泡泡"
+            ],
+            "role": "前期叠层：开技能叠层。艾丝黛尔为 Ⅰ 阶，泡泡为 Ⅱ 阶。"
+          }
+        ],
+        "mid": [],
+        "late": [
+          {
+            "operators": [
+              "佩佩",
+              "鸿雪"
+            ],
+            "role": "后期叠层：沉睡或眩晕叠层。佩佩兼策略与叠层。"
+          },
+          {
+            "operators": [
+              "真言"
+            ],
+            "role": "Ⅵ 阶主 C，输出终端。"
+          }
+        ],
+        "avoid": [],
+        "items": []
+      },
+      "strategies": [
+        "全盟约一图流策略位写佩佩（专属「博学多通」一类）。晓杰 425「萨尔贡全攻略」为长视频，本次未完整听写，不把口播写成抓取表。"
+      ],
+      "recommendedAdditional": [
+        "迅捷",
+        "精准"
+      ],
+      "communityCoreIdea": "6 萨尔贡 / 2 迅捷 / 2 精准；前期艾丝黛尔、泡泡开技能叠层，后期佩佩、鸿雪沉睡或眩晕叠层，主 C 真言。",
+      "gap": "完整人数目标来自一张全盟约一图流，缺少第二份写清回合抓取的独立长文。真言 + 至简 / 莎草的技能讨论不能单独当抓取顺序，未写入默认板。迅捷 / 精准具体干员优先级待核。",
+      "sources": [
+        {
+          "title": "PRTS 盟约记录",
+          "url": "https://prts.wiki/w/卫戍协议·规程/PRTS盟约记录",
+          "date": "2026-11-17",
+          "note": "官方效果与干员池唯一数值口径。"
+        },
+        {
+          "title": "泰拉生鲜研究所：全盟约打法叠层一图流",
+          "url": "https://www.bilibili.com/video/BV14aWd6wEYJ/",
+          "date": "2026-11-12",
+          "note": "已抽帧读图。萨尔贡行提供 6 / 2 迅捷 / 2 精准与前后期干员。社区推荐，单源待补充，不是官方结论。"
+        },
+        {
+          "title": "晓杰425：神中神阵容-萨尔贡全攻略教程（未完整听写）",
+          "url": "https://www.bilibili.com/video/BV11CWx6GELy/",
+          "date": "2026-11-09",
+          "note": "长视频，本次只核到标题 / 时长 / 封面，未逐字听完口播，不把口播顺序写成抓取表。"
+        }
+      ],
+      "officialPool": [
+        "艾丝黛尔",
+        "泡泡",
+        "莎草",
+        "卡涅利安",
+        "至简",
+        "森蚺",
+        "异客",
+        "佩佩",
+        "鸿雪",
+        "真言"
+      ]
+    },
+    {
+      "covenantId": "kjerag",
+      "routeId": "kjerag-alliances",
+      "routeName": "全盟约一图流 6 / 2 奥术 / 2 灵巧",
+      "name": "谢拉格",
+      "completeness": "单源待补充",
+      "recommended": true,
+      "targetBoard": "6 谢拉格 / 2 奥术 / 2 灵巧",
+      "targetBoardNotes": "来自全盟约一图流。6 人强化必须在场。另有 PPT 变体已分条，人数不要和本条写死成同一套。社区推荐，单源待补充，不是官方结论。不要入库「昼雪」。",
+      "priority": {
+        "early": [
+          {
+            "operators": [],
+            "role": "前期建议先全力升本。"
+          },
+          {
+            "operators": [
+              "极光"
+            ],
+            "role": "叠层干员含极光等中阶。三阶官方为极光、耶拉、初雪，不要写入昼雪。"
+          }
+        ],
+        "mid": [],
+        "late": [
+          {
+            "operators": [
+              "初雪",
+              "圣聆初雪"
+            ],
+            "role": "后期走冰冻叠层。"
+          },
+          {
+            "operators": [
+              "锏"
+            ],
+            "role": "主 C。锏同时计入卡西米尔、谢拉格、莱塔尼亚。"
+          }
+        ],
+        "avoid": [],
+        "items": []
+      },
+      "strategies": [
+        "全盟约一图流推荐耶拉。专属还有「不融信念」「雪域礼赠」。晓杰 425「谢拉格全攻略」本次未完整听写。"
+      ],
+      "recommendedAdditional": [
+        "奥术",
+        "灵巧"
+      ],
+      "communityCoreIdea": "6 谢拉格 / 2 奥术 / 2 灵巧；前期先升本，后期初雪 / 圣聆初雪冰冻叠层，主 C 锏，策略耶拉。",
+      "gap": "单源待补充。PPT 变体附加盟约与本条不完全一致，已分条。晓杰长教程未完整听写。",
+      "sources": [
+        {
+          "title": "PRTS 盟约记录",
+          "url": "https://prts.wiki/w/卫戍协议·规程/PRTS盟约记录",
+          "date": "2026-11-17",
+          "note": "官方效果与干员池唯一数值口径。"
+        },
+        {
+          "title": "泰拉生鲜研究所：全盟约打法叠层一图流",
+          "url": "https://www.bilibili.com/video/BV14aWd6wEYJ/",
+          "date": "2026-11-12",
+          "note": "已抽帧读图。谢拉格行提供 6 / 2 奥术 / 2 灵巧、耶拉策略与后期初雪 / 圣聆初雪、主 C 锏。社区推荐，单源待补充，不是官方结论。"
+        },
+        {
+          "title": "晓杰425：最神阵容推荐-谢拉格全攻略教程（未完整听写）",
+          "url": "https://www.bilibili.com/video/BV1cTWW6FEAS/",
+          "date": "2026-11-09",
+          "note": "长视频，本次未完整听写，不把口播写成抓取表。"
+        }
+      ],
+      "officialPool": [
+        "角峰",
+        "雪猎",
+        "哈洛德",
+        "极光",
+        "耶拉",
+        "初雪",
+        "灵知",
+        "圣聆初雪",
+        "凛御银灰",
+        "锏"
+      ]
+    },
+    {
+      "covenantId": "kjerag",
+      "routeId": "kjerag-ppt",
+      "routeName": "PPT 变体（灵巧 / 坚守 / 奇迹 / 聚合 / 绝技）",
+      "name": "谢拉格",
+      "completeness": "单源待补充",
+      "recommended": false,
+      "targetBoard": "谢拉格 + 灵巧 / 坚守 / 奇迹 / 聚合 / 绝技。具体 6/2/2 人数未写死，以读图所见图标与阶段阵容为准，勿臆造人数。",
+      "targetBoardNotes": "来自「言情小说女主」谢拉格一图流 PPT。作者强调上限不输大成逻各斯，并讨论初雪真空期可用冻河或莎草补回转。不要把全盟约表的 6 / 2 奥术 / 2 灵巧写进本条。社区推荐，单源待补充，不是官方结论。不要入库「昼雪」。",
+      "priority": {
+        "early": [],
+        "mid": [
+          {
+            "operators": [
+              "初雪"
+            ],
+            "role": "作者讨论初雪真空期可用冻河或莎草补回转；用哪一张仍待核，两条都不要写成唯一解。"
+          },
+          {
+            "operators": [
+              "冻河",
+              "莎草"
+            ],
+            "role": "初雪真空期补回转的备选，待核，不要写死必须带哪一张。"
+          }
+        ],
+        "late": [],
+        "avoid": [],
+        "items": []
+      },
+      "strategies": [
+        "本条未把策略写成与全盟约表相同的耶拉唯一解。部分字号较小处标待核。"
+      ],
+      "recommendedAdditional": [
+        "灵巧",
+        "坚守",
+        "奇迹",
+        "聚合",
+        "绝技"
+      ],
+      "recommendedAdditionalNotes": "来自 PPT 图标。精确人数待核，不要写死 6/2/2。是否必须上 6 谢拉格召唤巨人亦待核。",
+      "communityCoreIdea": "谢拉格走灵巧 / 坚守 / 奇迹 / 聚合 / 绝技，人数不写死。",
+      "gap": "单源待补充。PPT 上附加盟约的精确人数、初雪真空期用冻河还是莎草、是否必须上 6 谢拉格召唤巨人，均待核。部分字号较小处未强行识读。",
+      "sources": [
+        {
+          "title": "PRTS 盟约记录",
+          "url": "https://prts.wiki/w/卫戍协议·规程/PRTS盟约记录",
+          "date": "2026-11-17",
+          "note": "官方效果与干员池唯一数值口径。"
+        },
+        {
+          "title": "言情小说女主：谢拉格一图流！上限不输大成罗哥",
+          "url": "https://www.bilibili.com/video/BV15QW966EJ3/",
+          "date": "2026-11-12",
+          "note": "PPT 一图流，已抽帧读图，部分字号较小处标待核。社区推荐，单源待补充，不是官方结论。"
+        }
+      ],
+      "officialPool": [
+        "角峰",
+        "雪猎",
+        "哈洛德",
+        "极光",
+        "耶拉",
+        "初雪",
+        "灵知",
+        "圣聆初雪",
+        "凛御银灰",
+        "锏"
+      ]
+    },
+    {
+      "covenantId": "aegir",
+      "name": "阿戈尔",
+      "completeness": "单源待补充",
+      "recommended": true,
+      "targetBoard": "6 阿戈尔 / 2 突袭 / 2 灵巧",
+      "targetBoardNotes": "来自全盟约一图流「阿戈尔」行。6 人强化必须在场。吞噬站位会误伤队友，任何配方都必须强调站位，但具体格子坐标本次未核对，不要编造。另有「不屈 / 突袭 / 灵巧」等变体视频，未读完口播前不合成一套。禁止套用 2026-10 巴哈 pith 阿戈尔（上赛季 5 人强化）。社区推荐，单源待补充，不是官方结论。",
+      "priority": {
+        "early": [
+          {
+            "operators": [
+              "幽灵鲨",
+              "安哲拉"
+            ],
+            "role": "前期叠层：击倒叠层。幽灵鲨为 Ⅰ 阶，安哲拉为 Ⅱ 阶。"
+          }
+        ],
+        "mid": [],
+        "late": [
+          {
+            "operators": [
+              "斯卡蒂",
+              "歌蕾蒂娅"
+            ],
+            "role": "后期叠层：部署叠层。歌蕾蒂娅在图内简写「歌蒂」，入库用正式名。"
+          },
+          {
+            "operators": [
+              "克莱门莎"
+            ],
+            "role": "策略与主 C，输出终端。"
+          }
+        ],
+        "avoid": [],
+        "items": []
+      },
+      "strategies": [
+        "全盟约一图流策略位写克莱门莎（专属「崇高牺牲」）；歌蕾蒂娅「猎人战法」亦为专属。吞噬站位会误伤队友，必须注意站位；各地图格子坐标未对照置顶评论或画面入库，不要编造坐标。"
+      ],
+      "recommendedAdditional": [
+        "突袭",
+        "灵巧"
+      ],
+      "communityCoreIdea": "6 阿戈尔 / 2 突袭 / 2 灵巧；前期幽灵鲨、安哲拉，后期斯卡蒂、歌蕾蒂娅，策略 / 主 C 克莱门莎。",
+      "gap": "单源待补充。各地图吞噬站位坐标待对照 BV1zWWa6JEck 置顶评论或画面再补，本次不编。是否优先 pith / 优等生策略，以及浊心斯卡蒂与克莱门莎的取舍，均待核。晓杰与短教学未完整听写。",
+      "sources": [
+        {
+          "title": "PRTS 盟约记录",
+          "url": "https://prts.wiki/w/卫戍协议·规程/PRTS盟约记录",
+          "date": "2026-11-17",
+          "note": "官方效果与干员池唯一数值口径。"
+        },
+        {
+          "title": "泰拉生鲜研究所：全盟约打法叠层一图流",
+          "url": "https://www.bilibili.com/video/BV14aWd6wEYJ/",
+          "date": "2026-11-12",
+          "note": "已抽帧读图。阿戈尔行提供 6 / 2 突袭 / 2 灵巧与前后期干员、策略克莱门莎。社区推荐，单源待补充，不是官方结论。"
+        },
+        {
+          "title": "阿戈尔_专属篇_附全地图站位（坐标待补）",
+          "url": "https://www.bilibili.com/video/BV1zWWa6JEck/",
+          "date": "2026-11-13",
+          "note": "站位向。本次只核到标题 / 简介「地图站位为中后期」，未把具体格子坐标入库。"
+        },
+        {
+          "title": "晓杰425：最轮椅阵容-阿戈尔全攻略教程（未完整听写）",
+          "url": "https://www.bilibili.com/video/BV1FnWn6XEA5/",
+          "date": "2026-11-09",
+          "note": "长视频，本次未完整听写，不把口播写成抓取表。"
+        }
+      ],
+      "officialPool": [
+        "幽灵鲨",
+        "安哲拉",
+        "深巡",
+        "斯卡蒂",
+        "归溟幽灵鲨",
+        "水月",
+        "歌蕾蒂娅",
+        "乌尔比安",
+        "浊心斯卡蒂",
+        "克莱门莎"
+      ]
+    },
+    {
+      "covenantId": "kazimierz",
+      "name": "卡西米尔",
+      "completeness": "双源交叉偏弱",
+      "recommended": true,
+      "targetBoard": "大成 6 卡西米尔 / 3 不屈 / 2～3 突袭；不够可不强开 6 卡。中期过渡可见 4 卡西米尔 / 2 不屈 / 2 突袭 / 2 远见。",
+      "targetBoardNotes": "澈澈一图流与宅宅六发简介板面一致（6 卡 + 不屈 / 突袭），但后者偏个人实录口吻，标「双源交叉偏弱」，不要标「完整」。上赛季「6/2/2 突袭迅捷」不可直接套用。晓杰「迅捷卡西米尔」是另一条变体，未完整听写，不与本条合并。社区推荐，不是官方结论。",
+      "priority": {
+        "early": [
+          {
+            "operators": [
+              "砾"
+            ],
+            "role": "二本。社区称呼「石乐 / 石乐小姐」，正式名砾。宅宅六发：用暴躁铁皮砍砾，快速叠卡西米尔与不屈。"
+          },
+          {
+            "operators": [],
+            "role": "前期人数：先开 3 卡西米尔 + 3 不屈；突袭可后期叠。"
+          }
+        ],
+        "mid": [
+          {
+            "operators": [
+              "瑕光"
+            ],
+            "role": "三本，推进本家。社区简介写「瑶光」，对照三本本家作瑕光，待高清或作者确认。"
+          },
+          {
+            "operators": [
+              "赫德雷"
+            ],
+            "role": "四本，叠突袭。"
+          },
+          {
+            "operators": [
+              "玛恩纳"
+            ],
+            "role": "大 C，务必做成精锐。"
+          },
+          {
+            "operators": [
+              "远牙"
+            ],
+            "role": "不屈不足 200 层可上远牙帮砾复活叠层，200 后可下。"
+          }
+        ],
+        "late": [
+          {
+            "operators": [
+              "薇薇安娜"
+            ],
+            "role": "五本。简介写 vvan，正式名薇薇安娜；兼职输出 / 奥术户口。"
+          },
+          {
+            "operators": [
+              "缪尔赛思",
+              "耀骑士临光",
+              "锏"
+            ],
+            "role": "六本：缪尔赛思转职球；耀骑士临光；锏。简介原文还有「42」，正式名待核，不指定为其他干员。开 6 卡或补小盟约。"
+          }
+        ],
+        "avoid": [],
+        "items": [
+          {
+            "name": "42（原文保留，正式名待核）",
+            "kind": "unconfirmed",
+            "role": "宅宅六发简介六本原文「42」。正式名待核，不要自行指定。"
+          },
+          {
+            "name": "乌萨斯呼吸器、莱塔尼亚小鼓",
+            "kind": "equipment",
+            "role": "简介：可给暴躁铁皮。"
+          }
+        ]
+      },
+      "strategies": [
+        "策略不要写成唯一解。宅宅六发简介明确推荐暴躁铁皮（写「这很关键」）；全盟约一图流策略位写的是焰尾。焰尾「骑士团长」、玛恩纳「业务指标」为专属策略。"
+      ],
+      "recommendedAdditional": [
+        "不屈",
+        "突袭"
+      ],
+      "recommendedAdditionalNotes": "大成约 3 不屈、2～3 突袭；不屈层数不够时可用远牙过渡。远见是否必须保留到 Boss 待核。",
+      "communityCoreIdea": "6 卡西米尔 + 不屈 / 突袭；砾、瑕光推进本家，大 C 玛恩纳务必精锐。",
+      "gap": "双源交叉偏弱。澈澈一图流顶部三枚策略图标的正式名待核；「42」正式名待核；「瑶光」对照瑕光仍待确认。迅捷卡西米尔变体未完整听写，不与本条合并。",
+      "sources": [
+        {
+          "title": "PRTS 盟约记录",
+          "url": "https://prts.wiki/w/卫戍协议·规程/PRTS盟约记录",
+          "date": "2026-11-17",
+          "note": "官方效果与干员池唯一数值口径。"
+        },
+        {
+          "title": "澈澈Fault：卡西米尔公式化运营一图流",
+          "url": "https://www.bilibili.com/video/BV1HpWR6JE7g/",
+          "date": "2026-11-12",
+          "note": "已抽帧读图。社区推荐，不是官方结论。"
+        },
+        {
+          "title": "宅宅六发：卡西米尔强势阵容推荐（简介即抓取表）",
+          "url": "https://www.bilibili.com/video/BV1L1Wb6BENW/",
+          "date": "2026-11-10",
+          "note": "简介即完整文字抓取表，已核对。与澈澈一图流板面一致，但偏个人实录口吻，合计标「双源交叉偏弱」。"
+        },
+        {
+          "title": "泰拉生鲜研究所：全盟约打法叠层一图流",
+          "url": "https://www.bilibili.com/video/BV14aWd6wEYJ/",
+          "date": "2026-11-12",
+          "note": "已抽帧读图。卡西米尔行作交叉；策略位写焰尾，与宅宅推荐的暴躁铁皮不同，不要写成唯一解。"
+        },
+        {
+          "title": "晓杰425：卡西米尔必玩阵容-迅捷卡西米尔（未完整听写）",
+          "url": "https://www.bilibili.com/video/BV1TFss62Ezm/",
+          "date": "2026-11-15",
+          "note": "迅捷变体，本次未完整听写，不与默认的不屈 / 突袭板面合并。"
+        }
+      ],
+      "officialPool": [
+        "野鬃",
+        "砾",
+        "瑕光",
+        "历阵锐枪芬",
+        "远牙",
+        "玛恩纳",
+        "薇薇安娜",
+        "焰尾",
+        "耀骑士临光",
+        "锏"
+      ]
+    },
+    {
+      "covenantId": "iberia",
+      "routeId": "iberia-sanzhong",
+      "routeName": "白樱三本（坚守 / 聚合）",
+      "name": "伊比利亚",
+      "completeness": "单源待补充",
+      "recommended": true,
+      "targetBoard": "伊比利亚 + 3 坚守 + 2 聚合；迅捷不急着开。大成尽量 6 伊比利亚，否则保持 3 坚守。",
+      "targetBoardNotes": "白樱「三本伊比利亚公式化运营一图流」，推荐联机。前期 3 伊比利亚启动旅骨叠层；优先 3 坚守 + 2 聚合保战力。澈澈精准线是趣味 / 变形者向，已分条，不要当默认。社区推荐，单源待补充，不是官方结论。",
+      "priority": {
+        "early": [
+          {
+            "operators": [
+              "旅骨"
+            ],
+            "role": "1～4 回合 / 三本：尽快 3 伊比利亚，叠旅骨。2 回合升二级、4 回合升三级。"
+          },
+          {
+            "operators": [],
+            "role": "优先 3 坚守 + 2 聚合保道中战力；迅捷不急着开，有青枳且空位再考虑迅捷。"
+          },
+          {
+            "operators": [
+              "蓝毒",
+              "温蒂"
+            ],
+            "role": "图内「辅助叠层卡」；蓝毒亦作核心输出位。"
+          }
+        ],
+        "mid": [
+          {
+            "operators": [
+              "旅骨",
+              "海沫"
+            ],
+            "role": "中期留三本：精锐旅骨、海沫；三合一找流明；尽量 6 伊比利亚，找不到 6 就保 3 坚守。"
+          },
+          {
+            "operators": [
+              "流明"
+            ],
+            "role": "叠层核心卡。最晚约 9～10 回合升四级找精锐流明等。"
+          }
+        ],
+        "late": [
+          {
+            "operators": [
+              "棘刺",
+              "引星棘刺"
+            ],
+            "role": "后期五本棘刺过渡，六本换引星棘刺，作为核心输出替换。"
+          }
+        ],
+        "avoid": [],
+        "items": []
+      },
+      "strategies": [
+        "白樱线强调三本节奏（2 回合升二级、4 回合升三级）。专属策略引星棘刺「出航时刻」（伊比利亚激活人数达 4 解锁）。白樱线其他策略干员正式名待核，不臆造。一图流红字警告：不建议关闭「有未使用指令」提示。"
+      ],
+      "recommendedAdditional": [
+        "坚守",
+        "聚合"
+      ],
+      "recommendedAdditionalNotes": "优先 3 坚守 + 2 聚合。迅捷不急着开，有青枳且空位再考虑。",
+      "communityCoreIdea": "三本节奏走坚守 / 聚合，叠旅骨，后期引星棘刺；迅捷不急开。",
+      "gap": "单源待补充。白樱线策略干员正式名、旅骨叠层上限与站位待核。",
+      "sources": [
+        {
+          "title": "PRTS 盟约记录",
+          "url": "https://prts.wiki/w/卫戍协议·规程/PRTS盟约记录",
+          "date": "2026-11-17",
+          "note": "官方效果与干员池唯一数值口径。"
+        },
+        {
+          "title": "白樱iridescent：三本伊比利亚公式化运营一图流",
+          "url": "https://www.bilibili.com/video/BV1WGWr6UEhb/",
+          "date": "2026-11-14",
+          "note": "P1 一图流已读图，P2 为技能选择。社区推荐，单源待补充，不是官方结论。"
+        }
+      ],
+      "officialPool": [
+        "深靛",
+        "蓝毒",
+        "瑰盐",
+        "海沫",
+        "旅骨",
+        "温蒂",
+        "流明",
+        "艾丽妮",
+        "棘刺",
+        "引星棘刺"
+      ]
+    },
+    {
+      "covenantId": "iberia",
+      "routeId": "iberia-precision",
+      "routeName": "澈澈精准线（趣味 / 变形者向）",
+      "name": "伊比利亚",
+      "completeness": "单源待补充",
+      "recommended": false,
+      "targetBoard": "6 伊比利亚 / 3 精准 / 2 奥术 / 2 聚合",
+      "targetBoardNotes": "澈澈Fault「精准伊比利亚」，趣味向；dot 不吃奥术加成，作者也提示强度「神秘」。除非变形者集群，一般不建议硬开精准盟约。不要当默认路线。社区推荐，单源待补充，不是官方结论。",
+      "priority": {
+        "early": [],
+        "mid": [],
+        "late": [
+          {
+            "operators": [
+              "旅骨",
+              "瑰盐",
+              "流明",
+              "棘刺",
+              "蓝毒",
+              "引星棘刺",
+              "霍尔海雅"
+            ],
+            "role": "Boss 构筑示例来自 BV1vXWM6GETN 简介：旅骨、瑰盐、流明、棘刺（精准）、蓝毒或引星棘刺、霍尔海雅（转伊比利亚）、任意奥术、任意聚合。"
+          }
+        ],
+        "avoid": [],
+        "items": []
+      },
+      "strategies": [
+        "变形者集群可走本精准线。不要当作联机默认推荐。"
+      ],
+      "recommendedAdditional": [
+        "精准",
+        "奥术",
+        "聚合"
+      ],
+      "recommendedAdditionalNotes": "3 精准、2 奥术、2 聚合。3 精准增伤可观，但缺转职很难硬开。",
+      "exampleBoard": [
+        "旅骨",
+        "瑰盐",
+        "流明",
+        "棘刺",
+        "蓝毒",
+        "引星棘刺",
+        "霍尔海雅"
+      ],
+      "exampleBoardNotes": "简介 Boss 构筑示例，蓝毒或引星棘刺二选一，另加任意奥术、任意聚合，不是强制固定阵容。",
+      "communityCoreIdea": "趣味 / 变形者向的精准伊比利亚，不是默认路线。",
+      "gap": "趣味向，资信度低于白樱三本主线。温蒂不用转也能吃 3 精准属于零散讨论，未当完整配方。",
+      "sources": [
+        {
+          "title": "PRTS 盟约记录",
+          "url": "https://prts.wiki/w/卫戍协议·规程/PRTS盟约记录",
+          "date": "2026-11-17",
+          "note": "官方效果与干员池唯一数值口径。"
+        },
+        {
+          "title": "澈澈Fault：精准伊比利亚公式化运营一图流",
+          "url": "https://www.bilibili.com/video/BV19MsG6QEYu/",
+          "date": "2026-11-14",
+          "note": "已读图。趣味 / 变形者向，不要当默认。社区推荐，单源待补充，不是官方结论。"
+        },
+        {
+          "title": "大变伊比利亚基础教学（简介含 Boss 构筑）",
+          "url": "https://www.bilibili.com/video/BV1vXWM6GETN/",
+          "date": "2026-11-10",
+          "note": "简介含 Boss 构筑示例，已按原文转写。"
+        }
+      ],
+      "officialPool": [
+        "深靛",
+        "蓝毒",
+        "瑰盐",
+        "海沫",
+        "旅骨",
+        "温蒂",
+        "流明",
+        "艾丽妮",
+        "棘刺",
+        "引星棘刺"
+      ]
+    },
+    {
+      "covenantId": "leithanien",
+      "routeId": "leithanien-arts-precision",
+      "routeName": "白樱奥术 + 精准 + 远见（可上 6 莱）",
+      "name": "莱塔尼亚",
+      "completeness": "单源待补充",
+      "recommended": true,
+      "targetBoard": "前期约 3 莱 / 2 远见 / 2 奥术 / 2 精准；中期约 4～5 莱 / 2～3 奥术 / 3 精准 / 2 远见；四本对碰后冲 6 莱 / 2 奥术 / 3 精准 / 2 远见，有空位再 2 聚合。",
+      "targetBoardNotes": "白樱「奥术精准莱塔尼亚公式化运营一图流」。可上 6 莱。与同作者的变形者集群线已分条。「3333 / 不上 6 莱」仍缺抓取表，不要编造成第三条。两条都是白樱，标单源待补充，不是官方结论。6 人强化必须在场。",
+      "priority": {
+        "early": [
+          {
+            "operators": [
+              "地灵",
+              "折光",
+              "复奏"
+            ],
+            "role": "前期核心。复奏中后期放整备区，不要卖掉。"
+          },
+          {
+            "operators": [
+              "空弦",
+              "渡桥"
+            ],
+            "role": "远见叠层。低费精准 / 奥术 / 远见优先；黑键出来前先叠远见。"
+          },
+          {
+            "operators": [],
+            "role": "前期理想约 3 莱 / 2 远见 / 2 奥术 / 2 精准。升本：3 回合升二级；4 / 5 回合升三级。"
+          }
+        ],
+        "mid": [
+          {
+            "operators": [
+              "温蒂"
+            ],
+            "role": "中期理想约 4 莱 / 2 奥术 / 3 精准 / 2 远见。高阶奥术可替换过渡；可用温蒂过渡。"
+          },
+          {
+            "operators": [
+              "黑键",
+              "薇薇安娜",
+              "纯烬艾雅法拉"
+            ],
+            "role": "四本对碰：尽量碰出黑键；至少一张五阶叠层（薇薇安娜或纯烬艾雅法拉），再冲 6 莱。没纯烬 / 薇薇安娜不要轻易升五本。"
+          }
+        ],
+        "late": [
+          {
+            "operators": [],
+            "role": "大成 6 莱 / 2 奥术 / 3 精准 / 2 远见；有人口加 2 聚合。有转职则替换低阶。"
+          }
+        ],
+        "avoid": [],
+        "items": [
+          {
+            "name": "莱塔尼亚小鼓",
+            "kind": "equipment",
+            "role": "车尔尼小鼓可跳过真空期（技能调配帖交叉，非本条完整抓取依据）。"
+          }
+        ]
+      },
+      "strategies": [
+        "白樱公式化推荐杰西卡 / 昆图斯。专属策略车尔尼「流动乐章」。不要把「3333 / 不上 6 莱」写成已入库抓取表。"
+      ],
+      "recommendedAdditional": [
+        "奥术",
+        "精准",
+        "远见"
+      ],
+      "recommendedAdditionalNotes": "大成约 2 奥术 / 3 精准 / 2 远见，有空位再 2 聚合。独行等未在本条写死。",
+      "communityCoreIdea": "奥术 + 精准 + 远见，可上 6 莱；前期地灵、折光、复奏，复奏进整备区。",
+      "gap": "单源待补充（与变形者线同一作者）。「3333 / 不上 6 莱」仍缺完整抓取表，未编造入库。杰西卡与昆图斯策略差异、车尔尼小鼓与艾雅法拉技能选择待核。",
+      "sources": [
+        {
+          "title": "PRTS 盟约记录",
+          "url": "https://prts.wiki/w/卫戍协议·规程/PRTS盟约记录",
+          "date": "2026-11-17",
+          "note": "官方效果与干员池唯一数值口径。"
+        },
+        {
+          "title": "白樱iridescent：奥术精准莱塔尼亚公式化运营一图流",
+          "url": "https://www.bilibili.com/video/BV1UhWW6kE6t/",
+          "date": "2026-11-09",
+          "note": "已抽帧读图。社区推荐，单源待补充，不是官方结论。"
+        },
+        {
+          "title": "泰拉生鲜研究所：全盟约打法叠层一图流",
+          "url": "https://www.bilibili.com/video/BV14aWd6wEYJ/",
+          "date": "2026-11-12",
+          "note": "已抽帧读图。莱塔尼亚行作交叉，不单独构成配方。"
+        },
+        {
+          "title": "6莱＜3莱？版本答案3333莱塔尼亚（未当抓取表）",
+          "url": "https://www.bilibili.com/video/BV1PUWt6mEqi/",
+          "date": "2026-11-09",
+          "note": "简介讨论不上 6 莱。本次未完整读图，不编造抓取表，也不作为第三条路线入库。"
+        }
+      ],
+      "officialPool": [
+        "地灵",
+        "折光",
+        "复奏",
+        "车尔尼",
+        "卡涅利安",
+        "黑键",
+        "艾雅法拉",
+        "纯烬艾雅法拉",
+        "薇薇安娜",
+        "锏"
+      ]
+    },
+    {
+      "covenantId": "leithanien",
+      "routeId": "leithanien-shapeshifter",
+      "routeName": "白樱变形者集群",
+      "name": "莱塔尼亚",
+      "completeness": "单源待补充",
+      "recommended": false,
+      "targetBoard": "大成约 6 莱 / 2 远见 / 3 精准 / 3 奥术 / 2～3 聚合。霍尔海雅不能被 ban。",
+      "targetBoardNotes": "白樱「奥精聚莱塔尼亚一图流！变形者集群」。与公式化「可上 6 莱」线已分条，不要混板。两条都是白樱，标单源待补充，不是官方结论。",
+      "priority": {
+        "early": [
+          {
+            "operators": [
+              "地灵",
+              "折光",
+              "复奏"
+            ],
+            "role": "前提：霍尔海雅未被 ban。前期地灵、折光 / 复奏；复奏进整备区。"
+          },
+          {
+            "operators": [
+              "空弦"
+            ],
+            "role": "早期可带莱塔尼亚小鼓 + 变形同构体。"
+          }
+        ],
+        "mid": [
+          {
+            "operators": [
+              "黑键",
+              "霍尔海雅"
+            ],
+            "role": "中期约 5 莱 / 2 远见 / 3 精准 / 2 奥术。卡达可作奥术过渡；装备优先给霍尔海雅，再给空弦。"
+          }
+        ],
+        "late": [
+          {
+            "operators": [
+              "薇薇安娜",
+              "纯烬艾雅法拉"
+            ],
+            "role": "留四级找薇薇安娜 / 纯烬；再视情况五本找聚合与奥术。通常不升六本；无聚合转职则优先 3 聚合保生存。"
+          },
+          {
+            "operators": [
+              "阿米娅"
+            ],
+            "role": "五阶可选，服务叠层。"
+          }
+        ],
+        "avoid": [],
+        "items": [
+          {
+            "name": "莱塔尼亚小鼓、变形同构体",
+            "kind": "equipment",
+            "role": "空弦早期可带。"
+          },
+          {
+            "name": "M3茧甲",
+            "kind": "equipment",
+            "role": "五阶可选，服务叠层。"
+          }
+        ]
+      },
+      "strategies": [
+        "策略用变形者集群。霍尔海雅被 ban 时不要走这套。"
+      ],
+      "recommendedAdditional": [
+        "远见",
+        "精准",
+        "奥术",
+        "聚合"
+      ],
+      "recommendedAdditionalNotes": "大成约 2 远见 / 3 精准 / 3 奥术 / 2～3 聚合。",
+      "communityCoreIdea": "变形者集群走奥术 + 精准 + 远见 + 聚合；霍尔海雅不能被 ban。",
+      "gap": "单源待补充，与公式化线同一作者。「3333」路线未写入本条。",
+      "sources": [
+        {
+          "title": "PRTS 盟约记录",
+          "url": "https://prts.wiki/w/卫戍协议·规程/PRTS盟约记录",
+          "date": "2026-11-17",
+          "note": "官方效果与干员池唯一数值口径。"
+        },
+        {
+          "title": "白樱iridescent：奥精聚莱塔尼亚一图流！变形者集群",
+          "url": "https://www.bilibili.com/video/BV1BvWP6MEwG/",
+          "date": "2026-11-10",
+          "note": "已抽帧读图。社区推荐，单源待补充，不是官方结论。霍尔海雅不能被 ban。"
+        }
+      ],
+      "officialPool": [
+        "地灵",
+        "折光",
+        "复奏",
+        "车尔尼",
+        "卡涅利安",
+        "黑键",
+        "艾雅法拉",
+        "纯烬艾雅法拉",
+        "薇薇安娜",
+        "锏"
+      ]
+    }
+  ],
+  "disclaimer": "本数据对应「卫戍协议·规程·序列Ⅰ」（2026-11-08 起，Asia/Shanghai）。盟约数值、干员名单、等阶、特质和装备会随赛季或热更新调整，请以游戏内说明和 PRTS 盟约记录（https://prts.wiki/w/卫戍协议·规程/PRTS盟约记录）为准。社区配方只作参考，已标注来源与日期，不能写成官方结论。更换赛季后须整份更新本 JSON，禁止沿用 2026 年 3 月「盟约 / 盟约下半」资料（当时核心还含拉特兰，不含乌萨斯、伊比利亚、莱塔尼亚）。"
+}
